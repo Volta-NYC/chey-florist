@@ -1,80 +1,77 @@
 'use client';
 
 import Link from 'next/link';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 20);
+    window.addEventListener('scroll', onScroll);
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
 
   return (
-    <header className="sticky top-0 z-50 bg-white border-b border-gray-100">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
-          {/* Logo */}
-          <Link href="/" className="flex items-center">
-            <span className="text-xl font-light tracking-tight">
-              Chey <span className="font-serif italic">Florist</span>
+    <header
+      className={`sticky top-0 z-50 transition-all duration-500 ${
+        scrolled ? 'bg-cream/85 backdrop-blur-md border-b border-ink/10' : 'bg-transparent'
+      }`}
+    >
+      <div className="max-w-[1400px] mx-auto px-6 lg:px-10">
+        <div className="grid grid-cols-3 items-center h-20">
+          {/* Left nav */}
+          <nav className="hidden md:flex items-center gap-8">
+            <Link href="/collections/all" className="eyebrow link-edit text-ink/80 hover:text-ink">Atelier</Link>
+            <Link href="/collections/wedding-events" className="eyebrow link-edit text-ink/80 hover:text-ink">Weddings</Link>
+            <Link href="/collections/sympathy" className="eyebrow link-edit text-ink/80 hover:text-ink">Sympathy</Link>
+          </nav>
+
+          {/* Logo center */}
+          <Link href="/" className="flex flex-col items-center justify-center text-center group">
+            <span className="eyebrow text-gold mb-1">Est. Staten Island</span>
+            <span className="display text-2xl md:text-[28px] tracking-tight leading-none">
+              Chey <span className="italiana italic font-normal">Florist</span>
             </span>
           </Link>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-8">
-            <Link href="/collections/all" className="text-sm text-gray-700 hover:text-gray-900 transition">
-              Shop
-            </Link>
-            <Link href="/collections/wedding-events" className="text-sm text-gray-700 hover:text-gray-900 transition">
-              Weddings
-            </Link>
-            <Link href="/collections/sympathy" className="text-sm text-gray-700 hover:text-gray-900 transition">
-              Sympathy
-            </Link>
-            <Link href="/about" className="text-sm text-gray-700 hover:text-gray-900 transition">
-              About
-            </Link>
-            <Link href="/contact" className="text-sm text-gray-700 hover:text-gray-900 transition">
-              Contact
-            </Link>
+          {/* Right nav */}
+          <nav className="hidden md:flex items-center gap-8 justify-end">
+            <Link href="/about" className="eyebrow link-edit text-ink/80 hover:text-ink">Maison</Link>
+            <Link href="/contact" className="eyebrow link-edit text-ink/80 hover:text-ink">Contact</Link>
+            <a
+              href="tel:(929) 216-7775"
+              className="eyebrow text-ink border border-ink rounded-full px-4 py-2 hover:bg-ink hover:text-cream transition-colors duration-500"
+            >
+              Reserve
+            </a>
           </nav>
 
-          {/* Contact CTA */}
-          <div className="hidden sm:flex items-center gap-4">
-            <a href="tel:(929) 216-7775" className="text-sm font-medium text-gray-900">
-              (929) 216-7775
-            </a>
-            <button className="px-4 py-2 bg-rose-600 text-white text-sm rounded-md hover:bg-rose-700 transition">
-              Order
+          {/* Mobile menu button */}
+          <div className="md:hidden col-start-3 justify-self-end">
+            <button
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              className="eyebrow border border-ink/50 rounded-full px-4 py-2"
+            >
+              {isMenuOpen ? 'Close' : 'Menu'}
             </button>
           </div>
-
-          {/* Mobile Menu Button */}
-          <button
-            className="md:hidden p-2"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-          >
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
-          </button>
         </div>
 
-        {/* Mobile Navigation */}
         {isMenuOpen && (
-          <nav className="md:hidden pb-4 space-y-2">
-            <Link href="/collections/all" className="block px-2 py-2 text-sm text-gray-700 hover:bg-gray-50">
-              Shop
-            </Link>
-            <Link href="/collections/wedding-events" className="block px-2 py-2 text-sm text-gray-700 hover:bg-gray-50">
-              Weddings
-            </Link>
-            <Link href="/collections/sympathy" className="block px-2 py-2 text-sm text-gray-700 hover:bg-gray-50">
-              Sympathy
-            </Link>
-            <Link href="/about" className="block px-2 py-2 text-sm text-gray-700 hover:bg-gray-50">
-              About
-            </Link>
-            <Link href="/contact" className="block px-2 py-2 text-sm text-gray-700 hover:bg-gray-50">
-              Contact
-            </Link>
+          <nav className="md:hidden pb-6 pt-2 space-y-3 border-t border-ink/10">
+            {[
+              ['Atelier', '/collections/all'],
+              ['Weddings', '/collections/wedding-events'],
+              ['Sympathy', '/collections/sympathy'],
+              ['Maison', '/about'],
+              ['Contact', '/contact'],
+            ].map(([label, href]) => (
+              <Link key={href} href={href} className="block display text-2xl text-ink/90 hover:text-moss">
+                {label}
+              </Link>
+            ))}
           </nav>
         )}
       </div>

@@ -1,9 +1,9 @@
 import "./globals.css"
 
 export const metadata = {
-  title: "Chey Florist - Fresh Flower Delivery in Staten Island, NY",
-  description: "Hand-arranged fresh flowers for every occasion. Same-day delivery in Staten Island, NY. Premium arrangements for birthdays, anniversaries, weddings, sympathy, and more.",
-  keywords: "florist, flowers, Staten Island, delivery, arrangements, fresh flowers",
+  title: "Chey Florist · Le Jardin Privé — Hand-Arranged Flowers in Staten Island",
+  description: "An atelier of fresh blooms. Hand-arranged bouquets and botanical compositions, delivered the same day across Staten Island, NY.",
+  keywords: "florist, flowers, Staten Island, atelier, bouquets, weddings, delivery",
 }
 
 export default function RootLayout({
@@ -13,7 +13,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="min-h-screen flex flex-col bg-white">
+      <body className="min-h-screen flex flex-col paper grain text-ink antialiased">
         {children}
       </body>
     </html>

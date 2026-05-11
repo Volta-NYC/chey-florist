@@ -1,20 +1,24 @@
 'use client';
 
-import Link from 'next/link';
+const items = [
+  'Same-day delivery across Staten Island',
+  'Atelier No. 509 · Forest Ave',
+  'Hand-arranged · Never wired',
+  'Est. — A decade of blooms',
+  'Call the studio · (929) 216-7775',
+];
 
 export function AnnouncementBar() {
+  const loop = [...items, ...items, ...items, ...items];
   return (
-    <div className="bg-rose-50 border-b border-rose-100 text-center text-sm text-rose-900 py-3">
-      <div className="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4">
-        <p className="font-medium">
-          Fresh flowers for Staten Island — Same-day delivery available
-        </p>
-        <Link
-          href="/collections/all"
-          className="text-rose-700 hover:text-rose-900 font-medium underline"
-        >
-          Shop Now
-        </Link>
+    <div className="bg-ink text-cream overflow-hidden border-b border-ink/40">
+      <div className="marquee-track py-2.5">
+        {loop.map((t, i) => (
+          <span key={i} className="eyebrow flex items-center gap-6 px-6 whitespace-nowrap">
+            <span>{t}</span>
+            <span className="text-gold">✦</span>
+          </span>
+        ))}
       </div>
     </div>
   );

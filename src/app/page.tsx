@@ -1,6 +1,6 @@
 'use client';
 
-import { Header, Footer, HeroBanner, Section, ProductCard, CollectionCard, AnnouncementBar } from '@/components';
+import { Header, Footer, HeroBanner, ProductCard, AnnouncementBar } from '@/components';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
@@ -21,7 +21,7 @@ interface Collection {
 
 export default function HomePage() {
   const [products, setProducts] = useState<Product[]>([]);
-  const [collections, setCollections] = useState<Collection[]>([]);
+  const [, setCollections] = useState<Collection[]>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -40,191 +40,249 @@ export default function HomePage() {
         setLoading(false);
       }
     }
-
     loadData();
   }, []);
 
+  const occasions = [
+    { name: 'Birthday', slug: 'birthday', img: '/media/category-banner-birthday-6d5899ace2.webp', n: 'I' },
+    { name: 'Anniversary', slug: 'anniversary', img: '/media/category-banner-anniversary-09371ef61a.webp', n: 'II' },
+    { name: 'Sympathy', slug: 'sympathy', img: '/media/beautiful-memories-collection-banner-ec7f6dd5b8.webp', n: 'III' },
+    { name: 'Weddings & Events', slug: 'wedding-events', img: '/media/category-banner-love-and-romance-3661532b6f.webp', n: 'IV' },
+    { name: 'Just Because', slug: 'just-because', img: '/media/category-banner-just-because-36edc515de.webp', n: 'V' },
+    { name: 'Mother\'s Day', slug: 'mothers-day', img: '/media/dod-cat-banner-mothers-day-845b64e123.webp', n: 'VI' },
+  ];
+
   return (
-    <div className="min-h-screen flex flex-col bg-white">
+    <div className="min-h-screen flex flex-col">
       <AnnouncementBar />
       <Header />
 
-      {/* Hero Banner */}
       <HeroBanner
-        title="Fresh Flowers for Every Occasion"
-        subtitle="Hand-arranged with passion. Delivered fresh to Staten Island."
+        title="Le Jardin Privé"
         imagePath="/media/43475100-chey-florist-18a0d1d1f5.webp"
-        ctaText="Shop Now"
+        ctaText="Enter the Atelier"
         ctaLink="/collections/all"
       />
 
       <main className="flex-1">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* About Section */}
-          <Section
-            title="Premium Floral Design in Staten Island"
-            subtitle="For over a decade, Chey Florist has been crafting beautiful arrangements for every special moment"
-          >
-            <div className="grid md:grid-cols-2 gap-12 items-center">
-              <div className="prose prose-sm max-w-none">
-                <p className="text-lg text-gray-700 leading-relaxed mb-6">
-                  When you shop flowers with Chey Florist, you'll see beautiful bouquet arrangements of flowers hand-crafted with passion, attention to detail, and great care.
-                </p>
-                <p className="text-lg text-gray-700 leading-relaxed mb-6">
-                  We're committed to creating beautiful flower arrangements and floral gifts for any occasion—from Anniversary and Birthday flowers, to Valentine's and Mother's Day flowers.
-                </p>
-                <p className="text-lg text-gray-700 leading-relaxed">
-                  As a top florist in Staten Island, each arrangement gets the time and personalized attention it deserves. We hand-arrange all bouquets in-house and personally deliver them locally.
-                </p>
+        {/* MANIFESTO — editorial intro */}
+        <section className="py-28 md:py-40">
+          <div className="max-w-[1400px] mx-auto px-6 lg:px-10">
+            <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-start">
+              <div className="lg:col-span-3">
+                <div className="eyebrow text-gold mb-4">№ 01</div>
+                <div className="eyebrow text-ink/60">A Manifesto</div>
+                <div className="mt-10 hidden lg:block">
+                  <svg viewBox="0 0 80 80" className="w-20 h-20 text-moss animate-sway">
+                    <g fill="none" stroke="currentColor" strokeWidth="1">
+                      <path d="M40 70 Q40 50 30 40 Q20 30 25 20" />
+                      <circle cx="25" cy="20" r="6" />
+                      <circle cx="30" cy="40" r="4" />
+                      <path d="M40 70 Q40 55 50 45 Q60 35 55 22" />
+                      <circle cx="55" cy="22" r="5" />
+                      <path d="M40 70 Q42 60 48 56" />
+                    </g>
+                  </svg>
+                </div>
               </div>
-              <div className="relative h-96 rounded-2xl overflow-hidden">
+              <div className="lg:col-span-9">
+                <h2 className="display font-light leading-[0.95] tracking-[-0.02em] text-ink text-4xl md:text-6xl lg:text-[5rem]">
+                  Flowers, gathered with <span className="italiana italic text-moss">patience</span> &mdash;
+                  bouquets composed the way a painter composes a still <span className="italiana italic text-oxblood">life</span>.
+                </h2>
+                <div className="mt-12 grid md:grid-cols-2 gap-10">
+                  <p className="serif text-lg md:text-xl text-ink/80 leading-relaxed dropcap">
+                    For over a decade, Chey Florist has tended a small storefront on Forest Avenue. Each morning we open boxes from the market, sort stems by color and posture, and begin again. Nothing here is wired or stamped from a catalogue — every bouquet is conducted by hand, in our studio, on the same day it leaves us.
+                  </p>
+                  <p className="serif text-lg md:text-xl text-ink/80 leading-relaxed">
+                    We arrange for birthdays and quiet mornings, for new mothers and old friends, for funerals and first dates. We will deliver to a hospital, an office, a stoop in Stapleton, a chapel in West Brighton — the same afternoon, by our own hand. Tell us the colors you love and the person you'd like to move; we will compose the rest.
+                  </p>
+                </div>
+
+                <div className="mt-14 flex flex-wrap items-center gap-8">
+                  <Link href="/about" className="eyebrow link-edit text-ink">Read our story →</Link>
+                  <Link href="/delivery" className="eyebrow link-edit text-ink/70">Delivery & areas served</Link>
+                  <span className="display italic text-2xl text-moss">— C. F.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* PRACTICES — 3 columns with serif numbers */}
+        <section className="border-y border-ink/15 bg-bone/60 py-24">
+          <div className="max-w-[1400px] mx-auto px-6 lg:px-10">
+            <div className="grid md:grid-cols-3 gap-px bg-ink/10">
+              {[
+                {
+                  n: '01',
+                  title: 'Gathered at Dawn',
+                  body: 'Stems are selected at the wholesale market each morning. Only what is in peak condition makes it into the studio that day.',
+                },
+                {
+                  n: '02',
+                  title: 'Composed by Hand',
+                  body: 'We never use wire armatures or shortcuts. Each bouquet is built stem by stem, breath by breath, by the florist who signs the card.',
+                },
+                {
+                  n: '03',
+                  title: 'Delivered the Same Afternoon',
+                  body: 'Orders placed before 1pm are hand-delivered across Staten Island that same day. We knock; we wait until someone smiles.',
+                },
+              ].map((p) => (
+                <div key={p.n} className="bg-cream p-10 md:p-12 group hover:bg-bone transition-colors duration-700">
+                  <div className="flex items-baseline gap-4 mb-8">
+                    <span className="display italic text-6xl text-moss">{p.n}</span>
+                    <span className="h-px flex-1 bg-ink/30" />
+                    <span className="eyebrow text-ink/40">Practice</span>
+                  </div>
+                  <h3 className="display text-3xl text-ink mb-4 leading-tight">{p.title}</h3>
+                  <p className="serif text-lg text-ink/75 leading-relaxed">{p.body}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* FEATURED ARRANGEMENTS */}
+        {!loading && products.length > 0 && (
+          <section className="py-28 md:py-40">
+            <div className="max-w-[1400px] mx-auto px-6 lg:px-10">
+              <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-16">
+                <div>
+                  <div className="eyebrow text-gold mb-5 flex items-center gap-3">
+                    <span>№ 02</span><span className="w-10 h-px bg-ink/40" /><span>From the Studio</span>
+                  </div>
+                  <h2 className="display text-5xl md:text-7xl font-light leading-[0.95] tracking-[-0.02em]">
+                    This week's <span className="italiana italic text-moss">compositions</span>
+                  </h2>
+                </div>
+                <Link href="/collections/all" className="eyebrow link-edit text-ink shrink-0">
+                  See the entire atelier →
+                </Link>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-16">
+                {products.slice(0, 8).map((product, i) => (
+                  <div
+                    key={product.slug}
+                    className={i % 4 === 1 || i % 4 === 2 ? 'lg:translate-y-12' : ''}
+                  >
+                    <ProductCard
+                      name={product.name}
+                      slug={product.slug}
+                      price={product.price}
+                      imagePath={product.imagePaths?.[0] || '/media/placeholder.webp'}
+                      category={product.category}
+                      index={i}
+                    />
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+        )}
+
+        {/* OCCASIONS — editorial poster grid */}
+        <section className="bg-moss text-cream py-28 md:py-40 relative overflow-hidden">
+          <div className="absolute -top-32 -right-32 w-[480px] h-[480px] blob bg-moss2 opacity-50" />
+          <div className="absolute -bottom-40 -left-32 w-[520px] h-[520px] blob bg-ink opacity-40" />
+          <div className="relative max-w-[1400px] mx-auto px-6 lg:px-10">
+            <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-16">
+              <div>
+                <div className="eyebrow text-blush mb-5 flex items-center gap-3">
+                  <span>№ 03</span><span className="w-10 h-px bg-cream/40" /><span>By Occasion</span>
+                </div>
+                <h2 className="display text-5xl md:text-7xl font-light leading-[0.95] tracking-[-0.02em]">
+                  For every <span className="italiana italic text-blush">tender</span> moment.
+                </h2>
+              </div>
+              <p className="serif text-lg text-cream/75 max-w-md">
+                Six chapters of arrangements — celebrate, console, congratulate. Each curated to feel like it was made for one person.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-7">
+              {occasions.map((c) => (
+                <Link key={c.slug} href={`/collections/${c.slug}`} className="group block relative aspect-[3/4] overflow-hidden">
+                  <Image
+                    src={c.img}
+                    alt={c.name}
+                    fill
+                    className="object-cover opacity-85 group-hover:opacity-100 group-hover:scale-105 transition-all duration-[1200ms]"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-moss/95 via-moss/30 to-transparent" />
+                  <div className="absolute top-5 left-5 right-5 flex items-center justify-between eyebrow text-cream/90">
+                    <span>{c.n}</span>
+                    <span className="opacity-0 group-hover:opacity-100 transition-opacity">↗</span>
+                  </div>
+                  <div className="absolute bottom-6 left-6 right-6">
+                    <h3 className="display text-3xl md:text-4xl font-light leading-tight">
+                      {c.name}
+                    </h3>
+                    <div className="mt-2 eyebrow text-blush flex items-center gap-2">
+                      Browse <span className="w-6 h-px bg-blush" />
+                    </div>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* TESTIMONIAL — pull quote */}
+        <section className="py-32 md:py-44">
+          <div className="max-w-5xl mx-auto px-6 lg:px-10 text-center">
+            <div className="eyebrow text-gold mb-8">№ 04 — A Note Received</div>
+            <p className="display font-light text-4xl md:text-6xl leading-[1.05] tracking-[-0.01em] text-ink">
+              &ldquo;The arrangement <span className="italiana italic text-moss">arrived</span> right as the service began.
+              Three people cried; one asked who made them. <span className="italiana italic text-oxblood">Cheyenne</span>, you composed a goodbye.&rdquo;
+            </p>
+            <div className="mt-12 ornament-divider text-moss"><span className="display italic text-xl">✿</span></div>
+            <div className="mt-8 eyebrow text-ink/60">— M.D., Stapleton · February</div>
+          </div>
+        </section>
+
+        {/* CTA — bold finale */}
+        <section className="relative pb-28">
+          <div className="max-w-[1400px] mx-auto px-6 lg:px-10">
+            <div className="relative bg-ink text-cream overflow-hidden rounded-[2px]">
+              <div className="absolute inset-0 opacity-30">
                 <Image
-                  src="/media/dod-cat-banner-mothers-day-845b64e123.webp"
-                  alt="Chey Florist arrangements"
+                  src="/media/category-banner-love-and-romance-3661532b6f.webp"
+                  alt=""
                   fill
                   className="object-cover"
                 />
               </div>
-            </div>
-          </Section>
-
-          {/* Features */}
-          <section className="py-16 md:py-20 border-t border-b border-gray-200">
-            <div className="grid md:grid-cols-3 gap-8">
-              <div className="text-center">
-                <div className="mb-4 flex justify-center">
-                  <svg className="w-12 h-12 text-rose-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M5 13l4 4L19 7" />
-                  </svg>
+              <div className="absolute inset-0 bg-gradient-to-r from-ink via-ink/80 to-ink/30" />
+              <div className="relative grid lg:grid-cols-12 gap-10 p-10 md:p-20">
+                <div className="lg:col-span-8">
+                  <div className="eyebrow text-gold mb-6">Order Today</div>
+                  <h2 className="display text-5xl md:text-7xl lg:text-8xl font-light leading-[0.95] tracking-[-0.02em]">
+                    Send <span className="italiana italic text-blush">flowers</span> that<br />
+                    arrive while it still <span className="italiana italic text-blush">matters</span>.
+                  </h2>
                 </div>
-                <h3 className="text-lg font-light mb-2">Hand-Arranged Fresh Flowers</h3>
-                <p className="text-gray-600">Every arrangement is crafted by our skilled florists with premium, fresh blooms</p>
-              </div>
-              <div className="text-center">
-                <div className="mb-4 flex justify-center">
-                  <svg className="w-12 h-12 text-rose-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                  </svg>
+                <div className="lg:col-span-4 flex flex-col justify-end gap-5">
+                  <p className="serif text-lg text-cream/80 leading-snug">
+                    Same-day delivery across Staten Island when ordered before 1pm. National delivery through our trusted partner florists.
+                  </p>
+                  <div className="flex flex-col gap-3">
+                    <Link href="/collections/all" className="group flex items-center justify-between gap-3 bg-cream text-ink rounded-full px-7 py-4 btn-press">
+                      <span className="eyebrow">Browse the atelier</span>
+                      <span className="w-6 h-px bg-ink group-hover:w-12 transition-all duration-500" />
+                    </Link>
+                    <a href="tel:(929) 216-7775" className="group flex items-center justify-between gap-3 border border-cream/40 text-cream rounded-full px-7 py-4 btn-press hover:bg-cream/10 transition">
+                      <span className="eyebrow">(929) 216-7775</span>
+                      <span>↗</span>
+                    </a>
+                  </div>
                 </div>
-                <h3 className="text-lg font-light mb-2">Same-Day Local Delivery</h3>
-                <p className="text-gray-600">We deliver fresh arrangements directly to your recipient in Staten Island</p>
-              </div>
-              <div className="text-center">
-                <div className="mb-4 flex justify-center">
-                  <svg className="w-12 h-12 text-rose-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                </div>
-                <h3 className="text-lg font-light mb-2">Competitive Pricing</h3>
-                <p className="text-gray-600">Transparent pricing with no hidden fees. Quality flowers at fair prices</p>
               </div>
             </div>
-          </section>
-
-          {/* Featured Products */}
-          {!loading && products.length > 0 && (
-            <Section title="Featured Arrangements">
-              <div className="grid md:grid-cols-4 gap-8">
-                {products.slice(0, 4).map((product) => (
-                  <ProductCard
-                    key={product.slug}
-                    name={product.name}
-                    slug={product.slug}
-                    price={product.price}
-                    imagePath={product.imagePaths?.[0] || '/media/placeholder.webp'}
-                    category={product.category}
-                  />
-                ))}
-              </div>
-              <div className="text-center mt-12">
-                <Link
-                  href="/collections/all"
-                  className="inline-block px-8 py-3 border border-gray-900 text-gray-900 rounded-lg hover:bg-gray-50 transition"
-                >
-                  View All Products
-                </Link>
-              </div>
-            </Section>
-          )}
-
-          {/* Collections Grid */}
-          {!loading && collections.length > 0 && (
-            <Section title="Shop by Occasion">
-              <div className="grid md:grid-cols-3 gap-8">
-                {[
-                  { name: 'Birthday Flowers', slug: 'birthday' },
-                  { name: 'Anniversary Flowers', slug: 'anniversary' },
-                  { name: 'Sympathy & Funeral', slug: 'sympathy' },
-                  { name: 'Wedding & Events', slug: 'wedding-events' },
-                  { name: 'Valentine\'s Day', slug: 'valentines-day' },
-                  { name: 'Mother\'s Day', slug: 'mothers-day' },
-                ].map((collection) => (
-                  <CollectionCard
-                    key={collection.slug}
-                    name={collection.name}
-                    slug={collection.slug}
-                  />
-                ))}
-              </div>
-            </Section>
-          )}
-
-          {/* Testimonial/Trust Section */}
-          <section className="py-16 md:py-20 bg-gray-50 rounded-2xl px-8 md:px-12 mb-20">
-            <div className="max-w-3xl mx-auto text-center">
-              <h3 className="text-2xl md:text-3xl font-light mb-6">
-                Why Choose Chey Florist?
-              </h3>
-              <p className="text-lg text-gray-700 leading-relaxed mb-8">
-                We offer flower delivery in and around Staten Island, as well as nationwide delivery through our reliable florist network. Chey Florist provides same-day flower delivery for your last-minute gift needs.
-              </p>
-              <div className="flex flex-wrap gap-4 justify-center text-sm text-gray-600">
-                <span className="flex items-center gap-2">
-                  <svg className="w-4 h-4 text-rose-600" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                  </svg>
-                  Fresh Premium Flowers
-                </span>
-                <span className="flex items-center gap-2">
-                  <svg className="w-4 h-4 text-rose-600" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                  </svg>
-                  Expert Florists
-                </span>
-                <span className="flex items-center gap-2">
-                  <svg className="w-4 h-4 text-rose-600" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                  </svg>
-                  Same-Day Delivery
-                </span>
-              </div>
-            </div>
-          </section>
-
-          {/* CTA Section */}
-          <section className="py-16 md:py-20 text-center">
-            <h3 className="text-2xl md:text-3xl font-light mb-4">
-              Ready to Send Fresh Flowers?
-            </h3>
-            <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
-              Explore our beautiful collection of arrangements or call us for custom orders and personalized recommendations.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link
-                href="/collections/all"
-                className="px-8 py-3 bg-rose-600 text-white font-medium rounded-lg hover:bg-rose-700 transition"
-              >
-                Browse Flowers
-              </Link>
-              <a
-                href="tel:(929) 216-7775"
-                className="px-8 py-3 border border-gray-900 text-gray-900 font-medium rounded-lg hover:bg-gray-50 transition"
-              >
-                Call (929) 216-7775
-              </a>
-            </div>
-          </section>
-        </div>
+          </div>
+        </section>
       </main>
 
       <Footer />
