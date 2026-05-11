@@ -1,26 +1,21 @@
-import Link from "next/link"
-import type { Business } from "@/lib/types"
+'use client';
 
-type Props = {
-  business: Business
-}
+import Link from 'next/link';
 
-export default function AnnouncementBar({ business }: Props) {
-  const line =
-    business.promotions.find((p) => p.text.length < 120 && !p.text.includes("http"))?.text ??
-    "Staten Island delivery — fresh, hand-arranged flowers."
-
+export function AnnouncementBar() {
   return (
-    <div className="border-b border-stone-200/80 bg-[#f4f1ec] text-center text-xs font-medium tracking-wide text-stone-700 sm:text-sm">
-      <div className="mx-auto flex max-w-6xl flex-col items-center justify-center gap-1 px-4 py-2.5 sm:flex-row sm:gap-4">
-        <p className="max-w-2xl leading-snug">{line}</p>
+    <div className="bg-rose-50 border-b border-rose-100 text-center text-sm text-rose-900 py-3">
+      <div className="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4">
+        <p className="font-medium">
+          Fresh flowers for Staten Island — Same-day delivery available
+        </p>
         <Link
-          href="/collections/mothers-day"
-          className="shrink-0 underline decoration-stone-400 decoration-1 underline-offset-4 transition hover:text-stone-900"
+          href="/collections/all"
+          className="text-rose-700 hover:text-rose-900 font-medium underline"
         >
-          Shop collections
+          Shop Now
         </Link>
       </div>
     </div>
-  )
+  );
 }

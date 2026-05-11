@@ -1,0 +1,1060 @@
+
+> volta-base-template@1.0.0 build
+> next build
+
+▲ Next.js 16.1.6 (Turbopack)
+
+  Creating an optimized production build ...
+
+> Build error occurred
+Error: Turbopack build failed with 42 errors:
+./src/app/contact/page.tsx:6:1
+Export default doesn't exist in target module
+[0m [90m 4 |[39m [36mimport[39m [33mHeader[39m [36mfrom[39m [32m'@/components/header'[39m[33m;[39m
+ [90m 5 |[39m [36mimport[39m [33mFooter[39m [36mfrom[39m [32m'@/components/footer'[39m[33m;[39m
+[31m[1m>[22m[39m[90m 6 |[39m [36mimport[39m [33mAnnouncementBar[39m [36mfrom[39m [32m'@/components/announcement-bar'[39m[33m;[39m
+ [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 7 |[39m [36mimport[39m [33mSection[39m [36mfrom[39m [32m'@/components/section'[39m[33m;[39m
+ [90m 8 |[39m
+ [90m 9 |[39m [36mexport[39m [36mdefault[39m [36mfunction[39m [33mContactPage[39m() {[0m
+
+The export default was not found in module [project]/src/components/announcement-bar.tsx [app-client] (ecmascript).
+Did you mean to import AnnouncementBar?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/app/contact/page.tsx [Client Component Browser]
+    ./src/app/contact/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/contact/page.tsx [Client Component SSR]
+    ./src/app/contact/page.tsx [Server Component]
+
+
+./src/app/contact/page.tsx:6:1
+Export default doesn't exist in target module
+[0m [90m 4 |[39m [36mimport[39m [33mHeader[39m [36mfrom[39m [32m'@/components/header'[39m[33m;[39m
+ [90m 5 |[39m [36mimport[39m [33mFooter[39m [36mfrom[39m [32m'@/components/footer'[39m[33m;[39m
+[31m[1m>[22m[39m[90m 6 |[39m [36mimport[39m [33mAnnouncementBar[39m [36mfrom[39m [32m'@/components/announcement-bar'[39m[33m;[39m
+ [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 7 |[39m [36mimport[39m [33mSection[39m [36mfrom[39m [32m'@/components/section'[39m[33m;[39m
+ [90m 8 |[39m
+ [90m 9 |[39m [36mexport[39m [36mdefault[39m [36mfunction[39m [33mContactPage[39m() {[0m
+
+The export default was not found in module [project]/src/components/announcement-bar.tsx [app-ssr] (ecmascript).
+Did you mean to import AnnouncementBar?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/app/contact/page.tsx [Client Component Browser]
+    ./src/app/contact/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/contact/page.tsx [Client Component SSR]
+    ./src/app/contact/page.tsx [Server Component]
+
+
+./src/app/contact/page.tsx:5:1
+Export default doesn't exist in target module
+[0m [90m 3 |[39m [36mimport[39m [33mReact[39m [36mfrom[39m [32m'react'[39m[33m;[39m
+ [90m 4 |[39m [36mimport[39m [33mHeader[39m [36mfrom[39m [32m'@/components/header'[39m[33m;[39m
+[31m[1m>[22m[39m[90m 5 |[39m [36mimport[39m [33mFooter[39m [36mfrom[39m [32m'@/components/footer'[39m[33m;[39m
+ [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 6 |[39m [36mimport[39m [33mAnnouncementBar[39m [36mfrom[39m [32m'@/components/announcement-bar'[39m[33m;[39m
+ [90m 7 |[39m [36mimport[39m [33mSection[39m [36mfrom[39m [32m'@/components/section'[39m[33m;[39m
+ [90m 8 |[39m[0m
+
+The export default was not found in module [project]/src/components/footer.tsx [app-client] (ecmascript).
+Did you mean to import Footer?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/app/contact/page.tsx [Client Component Browser]
+    ./src/app/contact/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/contact/page.tsx [Client Component SSR]
+    ./src/app/contact/page.tsx [Server Component]
+
+
+./src/app/contact/page.tsx:5:1
+Export default doesn't exist in target module
+[0m [90m 3 |[39m [36mimport[39m [33mReact[39m [36mfrom[39m [32m'react'[39m[33m;[39m
+ [90m 4 |[39m [36mimport[39m [33mHeader[39m [36mfrom[39m [32m'@/components/header'[39m[33m;[39m
+[31m[1m>[22m[39m[90m 5 |[39m [36mimport[39m [33mFooter[39m [36mfrom[39m [32m'@/components/footer'[39m[33m;[39m
+ [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 6 |[39m [36mimport[39m [33mAnnouncementBar[39m [36mfrom[39m [32m'@/components/announcement-bar'[39m[33m;[39m
+ [90m 7 |[39m [36mimport[39m [33mSection[39m [36mfrom[39m [32m'@/components/section'[39m[33m;[39m
+ [90m 8 |[39m[0m
+
+The export default was not found in module [project]/src/components/footer.tsx [app-ssr] (ecmascript).
+Did you mean to import Footer?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/app/contact/page.tsx [Client Component Browser]
+    ./src/app/contact/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/contact/page.tsx [Client Component SSR]
+    ./src/app/contact/page.tsx [Server Component]
+
+
+./src/app/contact/page.tsx:4:1
+Export default doesn't exist in target module
+[0m [90m 2 |[39m
+ [90m 3 |[39m [36mimport[39m [33mReact[39m [36mfrom[39m [32m'react'[39m[33m;[39m
+[31m[1m>[22m[39m[90m 4 |[39m [36mimport[39m [33mHeader[39m [36mfrom[39m [32m'@/components/header'[39m[33m;[39m
+ [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 5 |[39m [36mimport[39m [33mFooter[39m [36mfrom[39m [32m'@/components/footer'[39m[33m;[39m
+ [90m 6 |[39m [36mimport[39m [33mAnnouncementBar[39m [36mfrom[39m [32m'@/components/announcement-bar'[39m[33m;[39m
+ [90m 7 |[39m [36mimport[39m [33mSection[39m [36mfrom[39m [32m'@/components/section'[39m[33m;[39m[0m
+
+The export default was not found in module [project]/src/components/header.tsx [app-client] (ecmascript).
+Did you mean to import Header?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/app/contact/page.tsx [Client Component Browser]
+    ./src/app/contact/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/contact/page.tsx [Client Component SSR]
+    ./src/app/contact/page.tsx [Server Component]
+
+
+./src/app/contact/page.tsx:4:1
+Export default doesn't exist in target module
+[0m [90m 2 |[39m
+ [90m 3 |[39m [36mimport[39m [33mReact[39m [36mfrom[39m [32m'react'[39m[33m;[39m
+[31m[1m>[22m[39m[90m 4 |[39m [36mimport[39m [33mHeader[39m [36mfrom[39m [32m'@/components/header'[39m[33m;[39m
+ [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 5 |[39m [36mimport[39m [33mFooter[39m [36mfrom[39m [32m'@/components/footer'[39m[33m;[39m
+ [90m 6 |[39m [36mimport[39m [33mAnnouncementBar[39m [36mfrom[39m [32m'@/components/announcement-bar'[39m[33m;[39m
+ [90m 7 |[39m [36mimport[39m [33mSection[39m [36mfrom[39m [32m'@/components/section'[39m[33m;[39m[0m
+
+The export default was not found in module [project]/src/components/header.tsx [app-ssr] (ecmascript).
+Did you mean to import Header?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/app/contact/page.tsx [Client Component Browser]
+    ./src/app/contact/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/contact/page.tsx [Client Component SSR]
+    ./src/app/contact/page.tsx [Server Component]
+
+
+./src/app/contact/page.tsx:7:1
+Export default doesn't exist in target module
+[0m [90m  5 |[39m [36mimport[39m [33mFooter[39m [36mfrom[39m [32m'@/components/footer'[39m[33m;[39m
+ [90m  6 |[39m [36mimport[39m [33mAnnouncementBar[39m [36mfrom[39m [32m'@/components/announcement-bar'[39m[33m;[39m
+[31m[1m>[22m[39m[90m  7 |[39m [36mimport[39m [33mSection[39m [36mfrom[39m [32m'@/components/section'[39m[33m;[39m
+ [90m    |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m  8 |[39m
+ [90m  9 |[39m [36mexport[39m [36mdefault[39m [36mfunction[39m [33mContactPage[39m() {
+ [90m 10 |[39m   [36mreturn[39m ([0m
+
+The export default was not found in module [project]/src/components/section.tsx [app-client] (ecmascript).
+Did you mean to import Section?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/app/contact/page.tsx [Client Component Browser]
+    ./src/app/contact/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/contact/page.tsx [Client Component SSR]
+    ./src/app/contact/page.tsx [Server Component]
+
+
+./src/app/contact/page.tsx:7:1
+Export default doesn't exist in target module
+[0m [90m  5 |[39m [36mimport[39m [33mFooter[39m [36mfrom[39m [32m'@/components/footer'[39m[33m;[39m
+ [90m  6 |[39m [36mimport[39m [33mAnnouncementBar[39m [36mfrom[39m [32m'@/components/announcement-bar'[39m[33m;[39m
+[31m[1m>[22m[39m[90m  7 |[39m [36mimport[39m [33mSection[39m [36mfrom[39m [32m'@/components/section'[39m[33m;[39m
+ [90m    |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m  8 |[39m
+ [90m  9 |[39m [36mexport[39m [36mdefault[39m [36mfunction[39m [33mContactPage[39m() {
+ [90m 10 |[39m   [36mreturn[39m ([0m
+
+The export default was not found in module [project]/src/components/section.tsx [app-ssr] (ecmascript).
+Did you mean to import Section?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/app/contact/page.tsx [Client Component Browser]
+    ./src/app/contact/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/contact/page.tsx [Client Component SSR]
+    ./src/app/contact/page.tsx [Server Component]
+
+
+./src/app/delivery/page.tsx:6:1
+Export default doesn't exist in target module
+[0m [90m 4 |[39m [36mimport[39m [33mHeader[39m [36mfrom[39m [32m'@/components/header'[39m[33m;[39m
+ [90m 5 |[39m [36mimport[39m [33mFooter[39m [36mfrom[39m [32m'@/components/footer'[39m[33m;[39m
+[31m[1m>[22m[39m[90m 6 |[39m [36mimport[39m [33mAnnouncementBar[39m [36mfrom[39m [32m'@/components/announcement-bar'[39m[33m;[39m
+ [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 7 |[39m [36mimport[39m [33mSection[39m [36mfrom[39m [32m'@/components/section'[39m[33m;[39m
+ [90m 8 |[39m
+ [90m 9 |[39m [36mexport[39m [36mdefault[39m [36mfunction[39m [33mDeliveryPage[39m() {[0m
+
+The export default was not found in module [project]/src/components/announcement-bar.tsx [app-client] (ecmascript).
+Did you mean to import AnnouncementBar?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/app/delivery/page.tsx [Client Component Browser]
+    ./src/app/delivery/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/delivery/page.tsx [Client Component SSR]
+    ./src/app/delivery/page.tsx [Server Component]
+
+
+./src/app/delivery/page.tsx:6:1
+Export default doesn't exist in target module
+[0m [90m 4 |[39m [36mimport[39m [33mHeader[39m [36mfrom[39m [32m'@/components/header'[39m[33m;[39m
+ [90m 5 |[39m [36mimport[39m [33mFooter[39m [36mfrom[39m [32m'@/components/footer'[39m[33m;[39m
+[31m[1m>[22m[39m[90m 6 |[39m [36mimport[39m [33mAnnouncementBar[39m [36mfrom[39m [32m'@/components/announcement-bar'[39m[33m;[39m
+ [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 7 |[39m [36mimport[39m [33mSection[39m [36mfrom[39m [32m'@/components/section'[39m[33m;[39m
+ [90m 8 |[39m
+ [90m 9 |[39m [36mexport[39m [36mdefault[39m [36mfunction[39m [33mDeliveryPage[39m() {[0m
+
+The export default was not found in module [project]/src/components/announcement-bar.tsx [app-ssr] (ecmascript).
+Did you mean to import AnnouncementBar?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/app/delivery/page.tsx [Client Component Browser]
+    ./src/app/delivery/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/delivery/page.tsx [Client Component SSR]
+    ./src/app/delivery/page.tsx [Server Component]
+
+
+./src/app/delivery/page.tsx:5:1
+Export default doesn't exist in target module
+[0m [90m 3 |[39m [36mimport[39m [33mReact[39m [36mfrom[39m [32m'react'[39m[33m;[39m
+ [90m 4 |[39m [36mimport[39m [33mHeader[39m [36mfrom[39m [32m'@/components/header'[39m[33m;[39m
+[31m[1m>[22m[39m[90m 5 |[39m [36mimport[39m [33mFooter[39m [36mfrom[39m [32m'@/components/footer'[39m[33m;[39m
+ [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 6 |[39m [36mimport[39m [33mAnnouncementBar[39m [36mfrom[39m [32m'@/components/announcement-bar'[39m[33m;[39m
+ [90m 7 |[39m [36mimport[39m [33mSection[39m [36mfrom[39m [32m'@/components/section'[39m[33m;[39m
+ [90m 8 |[39m[0m
+
+The export default was not found in module [project]/src/components/footer.tsx [app-client] (ecmascript).
+Did you mean to import Footer?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/app/delivery/page.tsx [Client Component Browser]
+    ./src/app/delivery/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/delivery/page.tsx [Client Component SSR]
+    ./src/app/delivery/page.tsx [Server Component]
+
+
+./src/app/delivery/page.tsx:5:1
+Export default doesn't exist in target module
+[0m [90m 3 |[39m [36mimport[39m [33mReact[39m [36mfrom[39m [32m'react'[39m[33m;[39m
+ [90m 4 |[39m [36mimport[39m [33mHeader[39m [36mfrom[39m [32m'@/components/header'[39m[33m;[39m
+[31m[1m>[22m[39m[90m 5 |[39m [36mimport[39m [33mFooter[39m [36mfrom[39m [32m'@/components/footer'[39m[33m;[39m
+ [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 6 |[39m [36mimport[39m [33mAnnouncementBar[39m [36mfrom[39m [32m'@/components/announcement-bar'[39m[33m;[39m
+ [90m 7 |[39m [36mimport[39m [33mSection[39m [36mfrom[39m [32m'@/components/section'[39m[33m;[39m
+ [90m 8 |[39m[0m
+
+The export default was not found in module [project]/src/components/footer.tsx [app-ssr] (ecmascript).
+Did you mean to import Footer?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/app/delivery/page.tsx [Client Component Browser]
+    ./src/app/delivery/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/delivery/page.tsx [Client Component SSR]
+    ./src/app/delivery/page.tsx [Server Component]
+
+
+./src/app/delivery/page.tsx:4:1
+Export default doesn't exist in target module
+[0m [90m 2 |[39m
+ [90m 3 |[39m [36mimport[39m [33mReact[39m [36mfrom[39m [32m'react'[39m[33m;[39m
+[31m[1m>[22m[39m[90m 4 |[39m [36mimport[39m [33mHeader[39m [36mfrom[39m [32m'@/components/header'[39m[33m;[39m
+ [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 5 |[39m [36mimport[39m [33mFooter[39m [36mfrom[39m [32m'@/components/footer'[39m[33m;[39m
+ [90m 6 |[39m [36mimport[39m [33mAnnouncementBar[39m [36mfrom[39m [32m'@/components/announcement-bar'[39m[33m;[39m
+ [90m 7 |[39m [36mimport[39m [33mSection[39m [36mfrom[39m [32m'@/components/section'[39m[33m;[39m[0m
+
+The export default was not found in module [project]/src/components/header.tsx [app-client] (ecmascript).
+Did you mean to import Header?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/app/delivery/page.tsx [Client Component Browser]
+    ./src/app/delivery/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/delivery/page.tsx [Client Component SSR]
+    ./src/app/delivery/page.tsx [Server Component]
+
+
+./src/app/delivery/page.tsx:4:1
+Export default doesn't exist in target module
+[0m [90m 2 |[39m
+ [90m 3 |[39m [36mimport[39m [33mReact[39m [36mfrom[39m [32m'react'[39m[33m;[39m
+[31m[1m>[22m[39m[90m 4 |[39m [36mimport[39m [33mHeader[39m [36mfrom[39m [32m'@/components/header'[39m[33m;[39m
+ [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 5 |[39m [36mimport[39m [33mFooter[39m [36mfrom[39m [32m'@/components/footer'[39m[33m;[39m
+ [90m 6 |[39m [36mimport[39m [33mAnnouncementBar[39m [36mfrom[39m [32m'@/components/announcement-bar'[39m[33m;[39m
+ [90m 7 |[39m [36mimport[39m [33mSection[39m [36mfrom[39m [32m'@/components/section'[39m[33m;[39m[0m
+
+The export default was not found in module [project]/src/components/header.tsx [app-ssr] (ecmascript).
+Did you mean to import Header?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/app/delivery/page.tsx [Client Component Browser]
+    ./src/app/delivery/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/delivery/page.tsx [Client Component SSR]
+    ./src/app/delivery/page.tsx [Server Component]
+
+
+./src/app/delivery/page.tsx:7:1
+Export default doesn't exist in target module
+[0m [90m  5 |[39m [36mimport[39m [33mFooter[39m [36mfrom[39m [32m'@/components/footer'[39m[33m;[39m
+ [90m  6 |[39m [36mimport[39m [33mAnnouncementBar[39m [36mfrom[39m [32m'@/components/announcement-bar'[39m[33m;[39m
+[31m[1m>[22m[39m[90m  7 |[39m [36mimport[39m [33mSection[39m [36mfrom[39m [32m'@/components/section'[39m[33m;[39m
+ [90m    |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m  8 |[39m
+ [90m  9 |[39m [36mexport[39m [36mdefault[39m [36mfunction[39m [33mDeliveryPage[39m() {
+ [90m 10 |[39m   [36mreturn[39m ([0m
+
+The export default was not found in module [project]/src/components/section.tsx [app-client] (ecmascript).
+Did you mean to import Section?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/app/delivery/page.tsx [Client Component Browser]
+    ./src/app/delivery/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/delivery/page.tsx [Client Component SSR]
+    ./src/app/delivery/page.tsx [Server Component]
+
+
+./src/app/delivery/page.tsx:7:1
+Export default doesn't exist in target module
+[0m [90m  5 |[39m [36mimport[39m [33mFooter[39m [36mfrom[39m [32m'@/components/footer'[39m[33m;[39m
+ [90m  6 |[39m [36mimport[39m [33mAnnouncementBar[39m [36mfrom[39m [32m'@/components/announcement-bar'[39m[33m;[39m
+[31m[1m>[22m[39m[90m  7 |[39m [36mimport[39m [33mSection[39m [36mfrom[39m [32m'@/components/section'[39m[33m;[39m
+ [90m    |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m  8 |[39m
+ [90m  9 |[39m [36mexport[39m [36mdefault[39m [36mfunction[39m [33mDeliveryPage[39m() {
+ [90m 10 |[39m   [36mreturn[39m ([0m
+
+The export default was not found in module [project]/src/components/section.tsx [app-ssr] (ecmascript).
+Did you mean to import Section?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/app/delivery/page.tsx [Client Component Browser]
+    ./src/app/delivery/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/delivery/page.tsx [Client Component SSR]
+    ./src/app/delivery/page.tsx [Server Component]
+
+
+./src/app/faq/page.tsx:6:1
+Export default doesn't exist in target module
+[0m [90m 4 |[39m [36mimport[39m [33mHeader[39m [36mfrom[39m [32m'@/components/header'[39m[33m;[39m
+ [90m 5 |[39m [36mimport[39m [33mFooter[39m [36mfrom[39m [32m'@/components/footer'[39m[33m;[39m
+[31m[1m>[22m[39m[90m 6 |[39m [36mimport[39m [33mAnnouncementBar[39m [36mfrom[39m [32m'@/components/announcement-bar'[39m[33m;[39m
+ [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 7 |[39m [36mimport[39m [33mSection[39m [36mfrom[39m [32m'@/components/section'[39m[33m;[39m
+ [90m 8 |[39m
+ [90m 9 |[39m [36mconst[39m faqs [33m=[39m [[0m
+
+The export default was not found in module [project]/src/components/announcement-bar.tsx [app-client] (ecmascript).
+Did you mean to import AnnouncementBar?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/app/faq/page.tsx [Client Component Browser]
+    ./src/app/faq/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/faq/page.tsx [Client Component SSR]
+    ./src/app/faq/page.tsx [Server Component]
+
+
+./src/app/faq/page.tsx:6:1
+Export default doesn't exist in target module
+[0m [90m 4 |[39m [36mimport[39m [33mHeader[39m [36mfrom[39m [32m'@/components/header'[39m[33m;[39m
+ [90m 5 |[39m [36mimport[39m [33mFooter[39m [36mfrom[39m [32m'@/components/footer'[39m[33m;[39m
+[31m[1m>[22m[39m[90m 6 |[39m [36mimport[39m [33mAnnouncementBar[39m [36mfrom[39m [32m'@/components/announcement-bar'[39m[33m;[39m
+ [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 7 |[39m [36mimport[39m [33mSection[39m [36mfrom[39m [32m'@/components/section'[39m[33m;[39m
+ [90m 8 |[39m
+ [90m 9 |[39m [36mconst[39m faqs [33m=[39m [[0m
+
+The export default was not found in module [project]/src/components/announcement-bar.tsx [app-ssr] (ecmascript).
+Did you mean to import AnnouncementBar?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/app/faq/page.tsx [Client Component Browser]
+    ./src/app/faq/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/faq/page.tsx [Client Component SSR]
+    ./src/app/faq/page.tsx [Server Component]
+
+
+./src/app/faq/page.tsx:5:1
+Export default doesn't exist in target module
+[0m [90m 3 |[39m [36mimport[39m [33mReact[39m[33m,[39m { useState } [36mfrom[39m [32m'react'[39m[33m;[39m
+ [90m 4 |[39m [36mimport[39m [33mHeader[39m [36mfrom[39m [32m'@/components/header'[39m[33m;[39m
+[31m[1m>[22m[39m[90m 5 |[39m [36mimport[39m [33mFooter[39m [36mfrom[39m [32m'@/components/footer'[39m[33m;[39m
+ [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 6 |[39m [36mimport[39m [33mAnnouncementBar[39m [36mfrom[39m [32m'@/components/announcement-bar'[39m[33m;[39m
+ [90m 7 |[39m [36mimport[39m [33mSection[39m [36mfrom[39m [32m'@/components/section'[39m[33m;[39m
+ [90m 8 |[39m[0m
+
+The export default was not found in module [project]/src/components/footer.tsx [app-client] (ecmascript).
+Did you mean to import Footer?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/app/faq/page.tsx [Client Component Browser]
+    ./src/app/faq/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/faq/page.tsx [Client Component SSR]
+    ./src/app/faq/page.tsx [Server Component]
+
+
+./src/app/faq/page.tsx:5:1
+Export default doesn't exist in target module
+[0m [90m 3 |[39m [36mimport[39m [33mReact[39m[33m,[39m { useState } [36mfrom[39m [32m'react'[39m[33m;[39m
+ [90m 4 |[39m [36mimport[39m [33mHeader[39m [36mfrom[39m [32m'@/components/header'[39m[33m;[39m
+[31m[1m>[22m[39m[90m 5 |[39m [36mimport[39m [33mFooter[39m [36mfrom[39m [32m'@/components/footer'[39m[33m;[39m
+ [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 6 |[39m [36mimport[39m [33mAnnouncementBar[39m [36mfrom[39m [32m'@/components/announcement-bar'[39m[33m;[39m
+ [90m 7 |[39m [36mimport[39m [33mSection[39m [36mfrom[39m [32m'@/components/section'[39m[33m;[39m
+ [90m 8 |[39m[0m
+
+The export default was not found in module [project]/src/components/footer.tsx [app-ssr] (ecmascript).
+Did you mean to import Footer?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/app/faq/page.tsx [Client Component Browser]
+    ./src/app/faq/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/faq/page.tsx [Client Component SSR]
+    ./src/app/faq/page.tsx [Server Component]
+
+
+./src/app/faq/page.tsx:4:1
+Export default doesn't exist in target module
+[0m [90m 2 |[39m
+ [90m 3 |[39m [36mimport[39m [33mReact[39m[33m,[39m { useState } [36mfrom[39m [32m'react'[39m[33m;[39m
+[31m[1m>[22m[39m[90m 4 |[39m [36mimport[39m [33mHeader[39m [36mfrom[39m [32m'@/components/header'[39m[33m;[39m
+ [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 5 |[39m [36mimport[39m [33mFooter[39m [36mfrom[39m [32m'@/components/footer'[39m[33m;[39m
+ [90m 6 |[39m [36mimport[39m [33mAnnouncementBar[39m [36mfrom[39m [32m'@/components/announcement-bar'[39m[33m;[39m
+ [90m 7 |[39m [36mimport[39m [33mSection[39m [36mfrom[39m [32m'@/components/section'[39m[33m;[39m[0m
+
+The export default was not found in module [project]/src/components/header.tsx [app-client] (ecmascript).
+Did you mean to import Header?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/app/faq/page.tsx [Client Component Browser]
+    ./src/app/faq/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/faq/page.tsx [Client Component SSR]
+    ./src/app/faq/page.tsx [Server Component]
+
+
+./src/app/faq/page.tsx:4:1
+Export default doesn't exist in target module
+[0m [90m 2 |[39m
+ [90m 3 |[39m [36mimport[39m [33mReact[39m[33m,[39m { useState } [36mfrom[39m [32m'react'[39m[33m;[39m
+[31m[1m>[22m[39m[90m 4 |[39m [36mimport[39m [33mHeader[39m [36mfrom[39m [32m'@/components/header'[39m[33m;[39m
+ [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 5 |[39m [36mimport[39m [33mFooter[39m [36mfrom[39m [32m'@/components/footer'[39m[33m;[39m
+ [90m 6 |[39m [36mimport[39m [33mAnnouncementBar[39m [36mfrom[39m [32m'@/components/announcement-bar'[39m[33m;[39m
+ [90m 7 |[39m [36mimport[39m [33mSection[39m [36mfrom[39m [32m'@/components/section'[39m[33m;[39m[0m
+
+The export default was not found in module [project]/src/components/header.tsx [app-ssr] (ecmascript).
+Did you mean to import Header?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/app/faq/page.tsx [Client Component Browser]
+    ./src/app/faq/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/faq/page.tsx [Client Component SSR]
+    ./src/app/faq/page.tsx [Server Component]
+
+
+./src/app/faq/page.tsx:7:1
+Export default doesn't exist in target module
+[0m [90m  5 |[39m [36mimport[39m [33mFooter[39m [36mfrom[39m [32m'@/components/footer'[39m[33m;[39m
+ [90m  6 |[39m [36mimport[39m [33mAnnouncementBar[39m [36mfrom[39m [32m'@/components/announcement-bar'[39m[33m;[39m
+[31m[1m>[22m[39m[90m  7 |[39m [36mimport[39m [33mSection[39m [36mfrom[39m [32m'@/components/section'[39m[33m;[39m
+ [90m    |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m  8 |[39m
+ [90m  9 |[39m [36mconst[39m faqs [33m=[39m [
+ [90m 10 |[39m   {[0m
+
+The export default was not found in module [project]/src/components/section.tsx [app-client] (ecmascript).
+Did you mean to import Section?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/app/faq/page.tsx [Client Component Browser]
+    ./src/app/faq/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/faq/page.tsx [Client Component SSR]
+    ./src/app/faq/page.tsx [Server Component]
+
+
+./src/app/faq/page.tsx:7:1
+Export default doesn't exist in target module
+[0m [90m  5 |[39m [36mimport[39m [33mFooter[39m [36mfrom[39m [32m'@/components/footer'[39m[33m;[39m
+ [90m  6 |[39m [36mimport[39m [33mAnnouncementBar[39m [36mfrom[39m [32m'@/components/announcement-bar'[39m[33m;[39m
+[31m[1m>[22m[39m[90m  7 |[39m [36mimport[39m [33mSection[39m [36mfrom[39m [32m'@/components/section'[39m[33m;[39m
+ [90m    |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m  8 |[39m
+ [90m  9 |[39m [36mconst[39m faqs [33m=[39m [
+ [90m 10 |[39m   {[0m
+
+The export default was not found in module [project]/src/components/section.tsx [app-ssr] (ecmascript).
+Did you mean to import Section?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/app/faq/page.tsx [Client Component Browser]
+    ./src/app/faq/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/faq/page.tsx [Client Component SSR]
+    ./src/app/faq/page.tsx [Server Component]
+
+
+./src/app/sympathy/page.tsx:6:1
+Export default doesn't exist in target module
+[0m [90m 4 |[39m [36mimport[39m [33mHeader[39m [36mfrom[39m [32m'@/components/header'[39m[33m;[39m
+ [90m 5 |[39m [36mimport[39m [33mFooter[39m [36mfrom[39m [32m'@/components/footer'[39m[33m;[39m
+[31m[1m>[22m[39m[90m 6 |[39m [36mimport[39m [33mAnnouncementBar[39m [36mfrom[39m [32m'@/components/announcement-bar'[39m[33m;[39m
+ [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 7 |[39m [36mimport[39m [33mSection[39m [36mfrom[39m [32m'@/components/section'[39m[33m;[39m
+ [90m 8 |[39m [36mimport[39m [33mProductCard[39m [36mfrom[39m [32m'@/components/product-card'[39m[33m;[39m
+ [90m 9 |[39m[0m
+
+The export default was not found in module [project]/src/components/announcement-bar.tsx [app-client] (ecmascript).
+Did you mean to import AnnouncementBar?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/app/sympathy/page.tsx [Client Component Browser]
+    ./src/app/sympathy/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/sympathy/page.tsx [Client Component SSR]
+    ./src/app/sympathy/page.tsx [Server Component]
+
+
+./src/app/sympathy/page.tsx:6:1
+Export default doesn't exist in target module
+[0m [90m 4 |[39m [36mimport[39m [33mHeader[39m [36mfrom[39m [32m'@/components/header'[39m[33m;[39m
+ [90m 5 |[39m [36mimport[39m [33mFooter[39m [36mfrom[39m [32m'@/components/footer'[39m[33m;[39m
+[31m[1m>[22m[39m[90m 6 |[39m [36mimport[39m [33mAnnouncementBar[39m [36mfrom[39m [32m'@/components/announcement-bar'[39m[33m;[39m
+ [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 7 |[39m [36mimport[39m [33mSection[39m [36mfrom[39m [32m'@/components/section'[39m[33m;[39m
+ [90m 8 |[39m [36mimport[39m [33mProductCard[39m [36mfrom[39m [32m'@/components/product-card'[39m[33m;[39m
+ [90m 9 |[39m[0m
+
+The export default was not found in module [project]/src/components/announcement-bar.tsx [app-ssr] (ecmascript).
+Did you mean to import AnnouncementBar?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/app/sympathy/page.tsx [Client Component Browser]
+    ./src/app/sympathy/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/sympathy/page.tsx [Client Component SSR]
+    ./src/app/sympathy/page.tsx [Server Component]
+
+
+./src/app/sympathy/page.tsx:5:1
+Export default doesn't exist in target module
+[0m [90m 3 |[39m [36mimport[39m [33mReact[39m [36mfrom[39m [32m'react'[39m[33m;[39m
+ [90m 4 |[39m [36mimport[39m [33mHeader[39m [36mfrom[39m [32m'@/components/header'[39m[33m;[39m
+[31m[1m>[22m[39m[90m 5 |[39m [36mimport[39m [33mFooter[39m [36mfrom[39m [32m'@/components/footer'[39m[33m;[39m
+ [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 6 |[39m [36mimport[39m [33mAnnouncementBar[39m [36mfrom[39m [32m'@/components/announcement-bar'[39m[33m;[39m
+ [90m 7 |[39m [36mimport[39m [33mSection[39m [36mfrom[39m [32m'@/components/section'[39m[33m;[39m
+ [90m 8 |[39m [36mimport[39m [33mProductCard[39m [36mfrom[39m [32m'@/components/product-card'[39m[33m;[39m[0m
+
+The export default was not found in module [project]/src/components/footer.tsx [app-client] (ecmascript).
+Did you mean to import Footer?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/app/sympathy/page.tsx [Client Component Browser]
+    ./src/app/sympathy/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/sympathy/page.tsx [Client Component SSR]
+    ./src/app/sympathy/page.tsx [Server Component]
+
+
+./src/app/sympathy/page.tsx:5:1
+Export default doesn't exist in target module
+[0m [90m 3 |[39m [36mimport[39m [33mReact[39m [36mfrom[39m [32m'react'[39m[33m;[39m
+ [90m 4 |[39m [36mimport[39m [33mHeader[39m [36mfrom[39m [32m'@/components/header'[39m[33m;[39m
+[31m[1m>[22m[39m[90m 5 |[39m [36mimport[39m [33mFooter[39m [36mfrom[39m [32m'@/components/footer'[39m[33m;[39m
+ [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 6 |[39m [36mimport[39m [33mAnnouncementBar[39m [36mfrom[39m [32m'@/components/announcement-bar'[39m[33m;[39m
+ [90m 7 |[39m [36mimport[39m [33mSection[39m [36mfrom[39m [32m'@/components/section'[39m[33m;[39m
+ [90m 8 |[39m [36mimport[39m [33mProductCard[39m [36mfrom[39m [32m'@/components/product-card'[39m[33m;[39m[0m
+
+The export default was not found in module [project]/src/components/footer.tsx [app-ssr] (ecmascript).
+Did you mean to import Footer?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/app/sympathy/page.tsx [Client Component Browser]
+    ./src/app/sympathy/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/sympathy/page.tsx [Client Component SSR]
+    ./src/app/sympathy/page.tsx [Server Component]
+
+
+./src/app/sympathy/page.tsx:4:1
+Export default doesn't exist in target module
+[0m [90m 2 |[39m
+ [90m 3 |[39m [36mimport[39m [33mReact[39m [36mfrom[39m [32m'react'[39m[33m;[39m
+[31m[1m>[22m[39m[90m 4 |[39m [36mimport[39m [33mHeader[39m [36mfrom[39m [32m'@/components/header'[39m[33m;[39m
+ [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 5 |[39m [36mimport[39m [33mFooter[39m [36mfrom[39m [32m'@/components/footer'[39m[33m;[39m
+ [90m 6 |[39m [36mimport[39m [33mAnnouncementBar[39m [36mfrom[39m [32m'@/components/announcement-bar'[39m[33m;[39m
+ [90m 7 |[39m [36mimport[39m [33mSection[39m [36mfrom[39m [32m'@/components/section'[39m[33m;[39m[0m
+
+The export default was not found in module [project]/src/components/header.tsx [app-client] (ecmascript).
+Did you mean to import Header?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/app/sympathy/page.tsx [Client Component Browser]
+    ./src/app/sympathy/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/sympathy/page.tsx [Client Component SSR]
+    ./src/app/sympathy/page.tsx [Server Component]
+
+
+./src/app/sympathy/page.tsx:4:1
+Export default doesn't exist in target module
+[0m [90m 2 |[39m
+ [90m 3 |[39m [36mimport[39m [33mReact[39m [36mfrom[39m [32m'react'[39m[33m;[39m
+[31m[1m>[22m[39m[90m 4 |[39m [36mimport[39m [33mHeader[39m [36mfrom[39m [32m'@/components/header'[39m[33m;[39m
+ [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 5 |[39m [36mimport[39m [33mFooter[39m [36mfrom[39m [32m'@/components/footer'[39m[33m;[39m
+ [90m 6 |[39m [36mimport[39m [33mAnnouncementBar[39m [36mfrom[39m [32m'@/components/announcement-bar'[39m[33m;[39m
+ [90m 7 |[39m [36mimport[39m [33mSection[39m [36mfrom[39m [32m'@/components/section'[39m[33m;[39m[0m
+
+The export default was not found in module [project]/src/components/header.tsx [app-ssr] (ecmascript).
+Did you mean to import Header?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/app/sympathy/page.tsx [Client Component Browser]
+    ./src/app/sympathy/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/sympathy/page.tsx [Client Component SSR]
+    ./src/app/sympathy/page.tsx [Server Component]
+
+
+./src/app/sympathy/page.tsx:8:1
+Export default doesn't exist in target module
+[0m [90m  6 |[39m [36mimport[39m [33mAnnouncementBar[39m [36mfrom[39m [32m'@/components/announcement-bar'[39m[33m;[39m
+ [90m  7 |[39m [36mimport[39m [33mSection[39m [36mfrom[39m [32m'@/components/section'[39m[33m;[39m
+[31m[1m>[22m[39m[90m  8 |[39m [36mimport[39m [33mProductCard[39m [36mfrom[39m [32m'@/components/product-card'[39m[33m;[39m
+ [90m    |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m  9 |[39m
+ [90m 10 |[39m [36mconst[39m products [33m=[39m [
+ [90m 11 |[39m   { id[33m:[39m [32m'1'[39m[33m,[39m name[33m:[39m [32m'White Serenity Wreath'[39m[33m,[39m price[33m:[39m [35m185[39m[33m,[39m image[33m:[39m [32m'https://images.unsplash.com/photo-1594910413521-026858a74136?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'[39m[33m,[39m description[33m:[39m [32m'A peaceful tribute for services.'[39m }[33m,[39m[0m
+
+The export default was not found in module [project]/src/components/product-card.tsx [app-client] (ecmascript).
+Did you mean to import ProductCard?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/app/sympathy/page.tsx [Client Component Browser]
+    ./src/app/sympathy/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/sympathy/page.tsx [Client Component SSR]
+    ./src/app/sympathy/page.tsx [Server Component]
+
+
+./src/app/sympathy/page.tsx:8:1
+Export default doesn't exist in target module
+[0m [90m  6 |[39m [36mimport[39m [33mAnnouncementBar[39m [36mfrom[39m [32m'@/components/announcement-bar'[39m[33m;[39m
+ [90m  7 |[39m [36mimport[39m [33mSection[39m [36mfrom[39m [32m'@/components/section'[39m[33m;[39m
+[31m[1m>[22m[39m[90m  8 |[39m [36mimport[39m [33mProductCard[39m [36mfrom[39m [32m'@/components/product-card'[39m[33m;[39m
+ [90m    |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m  9 |[39m
+ [90m 10 |[39m [36mconst[39m products [33m=[39m [
+ [90m 11 |[39m   { id[33m:[39m [32m'1'[39m[33m,[39m name[33m:[39m [32m'White Serenity Wreath'[39m[33m,[39m price[33m:[39m [35m185[39m[33m,[39m image[33m:[39m [32m'https://images.unsplash.com/photo-1594910413521-026858a74136?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'[39m[33m,[39m description[33m:[39m [32m'A peaceful tribute for services.'[39m }[33m,[39m[0m
+
+The export default was not found in module [project]/src/components/product-card.tsx [app-ssr] (ecmascript).
+Did you mean to import ProductCard?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/app/sympathy/page.tsx [Client Component Browser]
+    ./src/app/sympathy/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/sympathy/page.tsx [Client Component SSR]
+    ./src/app/sympathy/page.tsx [Server Component]
+
+
+./src/app/sympathy/page.tsx:7:1
+Export default doesn't exist in target module
+[0m [90m  5 |[39m [36mimport[39m [33mFooter[39m [36mfrom[39m [32m'@/components/footer'[39m[33m;[39m
+ [90m  6 |[39m [36mimport[39m [33mAnnouncementBar[39m [36mfrom[39m [32m'@/components/announcement-bar'[39m[33m;[39m
+[31m[1m>[22m[39m[90m  7 |[39m [36mimport[39m [33mSection[39m [36mfrom[39m [32m'@/components/section'[39m[33m;[39m
+ [90m    |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m  8 |[39m [36mimport[39m [33mProductCard[39m [36mfrom[39m [32m'@/components/product-card'[39m[33m;[39m
+ [90m  9 |[39m
+ [90m 10 |[39m [36mconst[39m products [33m=[39m [[0m
+
+The export default was not found in module [project]/src/components/section.tsx [app-client] (ecmascript).
+Did you mean to import Section?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/app/sympathy/page.tsx [Client Component Browser]
+    ./src/app/sympathy/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/sympathy/page.tsx [Client Component SSR]
+    ./src/app/sympathy/page.tsx [Server Component]
+
+
+./src/app/sympathy/page.tsx:7:1
+Export default doesn't exist in target module
+[0m [90m  5 |[39m [36mimport[39m [33mFooter[39m [36mfrom[39m [32m'@/components/footer'[39m[33m;[39m
+ [90m  6 |[39m [36mimport[39m [33mAnnouncementBar[39m [36mfrom[39m [32m'@/components/announcement-bar'[39m[33m;[39m
+[31m[1m>[22m[39m[90m  7 |[39m [36mimport[39m [33mSection[39m [36mfrom[39m [32m'@/components/section'[39m[33m;[39m
+ [90m    |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m  8 |[39m [36mimport[39m [33mProductCard[39m [36mfrom[39m [32m'@/components/product-card'[39m[33m;[39m
+ [90m  9 |[39m
+ [90m 10 |[39m [36mconst[39m products [33m=[39m [[0m
+
+The export default was not found in module [project]/src/components/section.tsx [app-ssr] (ecmascript).
+Did you mean to import Section?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/app/sympathy/page.tsx [Client Component Browser]
+    ./src/app/sympathy/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/sympathy/page.tsx [Client Component SSR]
+    ./src/app/sympathy/page.tsx [Server Component]
+
+
+./src/app/wedding-events/page.tsx:6:1
+Export default doesn't exist in target module
+[0m [90m 4 |[39m [36mimport[39m [33mHeader[39m [36mfrom[39m [32m'@/components/header'[39m[33m;[39m
+ [90m 5 |[39m [36mimport[39m [33mFooter[39m [36mfrom[39m [32m'@/components/footer'[39m[33m;[39m
+[31m[1m>[22m[39m[90m 6 |[39m [36mimport[39m [33mAnnouncementBar[39m [36mfrom[39m [32m'@/components/announcement-bar'[39m[33m;[39m
+ [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 7 |[39m [36mimport[39m [33mSection[39m [36mfrom[39m [32m'@/components/section'[39m[33m;[39m
+ [90m 8 |[39m
+ [90m 9 |[39m [36mexport[39m [36mdefault[39m [36mfunction[39m [33mWeddingEventsPage[39m() {[0m
+
+The export default was not found in module [project]/src/components/announcement-bar.tsx [app-client] (ecmascript).
+Did you mean to import AnnouncementBar?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/app/wedding-events/page.tsx [Client Component Browser]
+    ./src/app/wedding-events/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/wedding-events/page.tsx [Client Component SSR]
+    ./src/app/wedding-events/page.tsx [Server Component]
+
+
+./src/app/wedding-events/page.tsx:6:1
+Export default doesn't exist in target module
+[0m [90m 4 |[39m [36mimport[39m [33mHeader[39m [36mfrom[39m [32m'@/components/header'[39m[33m;[39m
+ [90m 5 |[39m [36mimport[39m [33mFooter[39m [36mfrom[39m [32m'@/components/footer'[39m[33m;[39m
+[31m[1m>[22m[39m[90m 6 |[39m [36mimport[39m [33mAnnouncementBar[39m [36mfrom[39m [32m'@/components/announcement-bar'[39m[33m;[39m
+ [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 7 |[39m [36mimport[39m [33mSection[39m [36mfrom[39m [32m'@/components/section'[39m[33m;[39m
+ [90m 8 |[39m
+ [90m 9 |[39m [36mexport[39m [36mdefault[39m [36mfunction[39m [33mWeddingEventsPage[39m() {[0m
+
+The export default was not found in module [project]/src/components/announcement-bar.tsx [app-ssr] (ecmascript).
+Did you mean to import AnnouncementBar?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/app/wedding-events/page.tsx [Client Component Browser]
+    ./src/app/wedding-events/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/wedding-events/page.tsx [Client Component SSR]
+    ./src/app/wedding-events/page.tsx [Server Component]
+
+
+./src/app/wedding-events/page.tsx:5:1
+Export default doesn't exist in target module
+[0m [90m 3 |[39m [36mimport[39m [33mReact[39m [36mfrom[39m [32m'react'[39m[33m;[39m
+ [90m 4 |[39m [36mimport[39m [33mHeader[39m [36mfrom[39m [32m'@/components/header'[39m[33m;[39m
+[31m[1m>[22m[39m[90m 5 |[39m [36mimport[39m [33mFooter[39m [36mfrom[39m [32m'@/components/footer'[39m[33m;[39m
+ [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 6 |[39m [36mimport[39m [33mAnnouncementBar[39m [36mfrom[39m [32m'@/components/announcement-bar'[39m[33m;[39m
+ [90m 7 |[39m [36mimport[39m [33mSection[39m [36mfrom[39m [32m'@/components/section'[39m[33m;[39m
+ [90m 8 |[39m[0m
+
+The export default was not found in module [project]/src/components/footer.tsx [app-client] (ecmascript).
+Did you mean to import Footer?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/app/wedding-events/page.tsx [Client Component Browser]
+    ./src/app/wedding-events/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/wedding-events/page.tsx [Client Component SSR]
+    ./src/app/wedding-events/page.tsx [Server Component]
+
+
+./src/app/wedding-events/page.tsx:5:1
+Export default doesn't exist in target module
+[0m [90m 3 |[39m [36mimport[39m [33mReact[39m [36mfrom[39m [32m'react'[39m[33m;[39m
+ [90m 4 |[39m [36mimport[39m [33mHeader[39m [36mfrom[39m [32m'@/components/header'[39m[33m;[39m
+[31m[1m>[22m[39m[90m 5 |[39m [36mimport[39m [33mFooter[39m [36mfrom[39m [32m'@/components/footer'[39m[33m;[39m
+ [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 6 |[39m [36mimport[39m [33mAnnouncementBar[39m [36mfrom[39m [32m'@/components/announcement-bar'[39m[33m;[39m
+ [90m 7 |[39m [36mimport[39m [33mSection[39m [36mfrom[39m [32m'@/components/section'[39m[33m;[39m
+ [90m 8 |[39m[0m
+
+The export default was not found in module [project]/src/components/footer.tsx [app-ssr] (ecmascript).
+Did you mean to import Footer?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/app/wedding-events/page.tsx [Client Component Browser]
+    ./src/app/wedding-events/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/wedding-events/page.tsx [Client Component SSR]
+    ./src/app/wedding-events/page.tsx [Server Component]
+
+
+./src/app/wedding-events/page.tsx:4:1
+Export default doesn't exist in target module
+[0m [90m 2 |[39m
+ [90m 3 |[39m [36mimport[39m [33mReact[39m [36mfrom[39m [32m'react'[39m[33m;[39m
+[31m[1m>[22m[39m[90m 4 |[39m [36mimport[39m [33mHeader[39m [36mfrom[39m [32m'@/components/header'[39m[33m;[39m
+ [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 5 |[39m [36mimport[39m [33mFooter[39m [36mfrom[39m [32m'@/components/footer'[39m[33m;[39m
+ [90m 6 |[39m [36mimport[39m [33mAnnouncementBar[39m [36mfrom[39m [32m'@/components/announcement-bar'[39m[33m;[39m
+ [90m 7 |[39m [36mimport[39m [33mSection[39m [36mfrom[39m [32m'@/components/section'[39m[33m;[39m[0m
+
+The export default was not found in module [project]/src/components/header.tsx [app-client] (ecmascript).
+Did you mean to import Header?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/app/wedding-events/page.tsx [Client Component Browser]
+    ./src/app/wedding-events/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/wedding-events/page.tsx [Client Component SSR]
+    ./src/app/wedding-events/page.tsx [Server Component]
+
+
+./src/app/wedding-events/page.tsx:4:1
+Export default doesn't exist in target module
+[0m [90m 2 |[39m
+ [90m 3 |[39m [36mimport[39m [33mReact[39m [36mfrom[39m [32m'react'[39m[33m;[39m
+[31m[1m>[22m[39m[90m 4 |[39m [36mimport[39m [33mHeader[39m [36mfrom[39m [32m'@/components/header'[39m[33m;[39m
+ [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 5 |[39m [36mimport[39m [33mFooter[39m [36mfrom[39m [32m'@/components/footer'[39m[33m;[39m
+ [90m 6 |[39m [36mimport[39m [33mAnnouncementBar[39m [36mfrom[39m [32m'@/components/announcement-bar'[39m[33m;[39m
+ [90m 7 |[39m [36mimport[39m [33mSection[39m [36mfrom[39m [32m'@/components/section'[39m[33m;[39m[0m
+
+The export default was not found in module [project]/src/components/header.tsx [app-ssr] (ecmascript).
+Did you mean to import Header?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/app/wedding-events/page.tsx [Client Component Browser]
+    ./src/app/wedding-events/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/wedding-events/page.tsx [Client Component SSR]
+    ./src/app/wedding-events/page.tsx [Server Component]
+
+
+./src/app/wedding-events/page.tsx:7:1
+Export default doesn't exist in target module
+[0m [90m  5 |[39m [36mimport[39m [33mFooter[39m [36mfrom[39m [32m'@/components/footer'[39m[33m;[39m
+ [90m  6 |[39m [36mimport[39m [33mAnnouncementBar[39m [36mfrom[39m [32m'@/components/announcement-bar'[39m[33m;[39m
+[31m[1m>[22m[39m[90m  7 |[39m [36mimport[39m [33mSection[39m [36mfrom[39m [32m'@/components/section'[39m[33m;[39m
+ [90m    |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m  8 |[39m
+ [90m  9 |[39m [36mexport[39m [36mdefault[39m [36mfunction[39m [33mWeddingEventsPage[39m() {
+ [90m 10 |[39m   [36mreturn[39m ([0m
+
+The export default was not found in module [project]/src/components/section.tsx [app-client] (ecmascript).
+Did you mean to import Section?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/app/wedding-events/page.tsx [Client Component Browser]
+    ./src/app/wedding-events/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/wedding-events/page.tsx [Client Component SSR]
+    ./src/app/wedding-events/page.tsx [Server Component]
+
+
+./src/app/wedding-events/page.tsx:7:1
+Export default doesn't exist in target module
+[0m [90m  5 |[39m [36mimport[39m [33mFooter[39m [36mfrom[39m [32m'@/components/footer'[39m[33m;[39m
+ [90m  6 |[39m [36mimport[39m [33mAnnouncementBar[39m [36mfrom[39m [32m'@/components/announcement-bar'[39m[33m;[39m
+[31m[1m>[22m[39m[90m  7 |[39m [36mimport[39m [33mSection[39m [36mfrom[39m [32m'@/components/section'[39m[33m;[39m
+ [90m    |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m  8 |[39m
+ [90m  9 |[39m [36mexport[39m [36mdefault[39m [36mfunction[39m [33mWeddingEventsPage[39m() {
+ [90m 10 |[39m   [36mreturn[39m ([0m
+
+The export default was not found in module [project]/src/components/section.tsx [app-ssr] (ecmascript).
+Did you mean to import Section?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/app/wedding-events/page.tsx [Client Component Browser]
+    ./src/app/wedding-events/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/wedding-events/page.tsx [Client Component SSR]
+    ./src/app/wedding-events/page.tsx [Server Component]
+
+
+    at <unknown> (./src/app/contact/page.tsx:6:1)
+    at <unknown> (./src/app/contact/page.tsx:6:1)
+    at <unknown> (./src/app/contact/page.tsx:5:1)
+    at <unknown> (./src/app/contact/page.tsx:5:1)
+    at <unknown> (./src/app/contact/page.tsx:4:1)
+    at <unknown> (./src/app/contact/page.tsx:4:1)
+    at <unknown> (./src/app/contact/page.tsx:7:1)
+    at <unknown> (./src/app/contact/page.tsx:7:1)
+    at <unknown> (./src/app/delivery/page.tsx:6:1)
+    at <unknown> (./src/app/delivery/page.tsx:6:1)
+    at <unknown> (./src/app/delivery/page.tsx:5:1)
+    at <unknown> (./src/app/delivery/page.tsx:5:1)
+    at <unknown> (./src/app/delivery/page.tsx:4:1)
+    at <unknown> (./src/app/delivery/page.tsx:4:1)
+    at <unknown> (./src/app/delivery/page.tsx:7:1)
+    at <unknown> (./src/app/delivery/page.tsx:7:1)
+    at <unknown> (./src/app/faq/page.tsx:6:1)
+    at <unknown> (./src/app/faq/page.tsx:6:1)
+    at <unknown> (./src/app/faq/page.tsx:5:1)
+    at <unknown> (./src/app/faq/page.tsx:5:1)
+    at <unknown> (./src/app/faq/page.tsx:4:1)
+    at <unknown> (./src/app/faq/page.tsx:4:1)
+    at <unknown> (./src/app/faq/page.tsx:7:1)
+    at <unknown> (./src/app/faq/page.tsx:7:1)
+    at <unknown> (./src/app/sympathy/page.tsx:6:1)
+    at <unknown> (./src/app/sympathy/page.tsx:6:1)
+    at <unknown> (./src/app/sympathy/page.tsx:5:1)
+    at <unknown> (./src/app/sympathy/page.tsx:5:1)
+    at <unknown> (./src/app/sympathy/page.tsx:4:1)
+    at <unknown> (./src/app/sympathy/page.tsx:4:1)
+    at <unknown> (./src/app/sympathy/page.tsx:8:1)
+    at <unknown> (./src/app/sympathy/page.tsx:8:1)
+    at <unknown> (./src/app/sympathy/page.tsx:7:1)
+    at <unknown> (./src/app/sympathy/page.tsx:7:1)
+    at <unknown> (./src/app/wedding-events/page.tsx:6:1)
+    at <unknown> (./src/app/wedding-events/page.tsx:6:1)
+    at <unknown> (./src/app/wedding-events/page.tsx:5:1)
+    at <unknown> (./src/app/wedding-events/page.tsx:5:1)
+    at <unknown> (./src/app/wedding-events/page.tsx:4:1)
+    at <unknown> (./src/app/wedding-events/page.tsx:4:1)
+    at <unknown> (./src/app/wedding-events/page.tsx:7:1)
+    at <unknown> (./src/app/wedding-events/page.tsx:7:1)
