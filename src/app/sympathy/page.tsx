@@ -1,60 +1,137 @@
 'use client';
 
-import React from 'react';
-import { Header } from '@/components/header';
-import { Footer } from '@/components/footer';
-import { AnnouncementBar } from '@/components/announcement-bar';
-import { Section } from '@/components/section';
-import { ProductCard } from '@/components/product-card';
+import { Header, Footer, AnnouncementBar, Section, ProductCard } from '@/components';
+import Image from 'next/image';
+import { useEffect, useState } from 'react';
 
-const products = [
-  { id: '1', name: 'White Serenity Wreath', price: 185, image: 'https://images.unsplash.com/photo-1594910413521-026858a74136?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80', description: 'A peaceful tribute for services.' },
-  { id: '2', name: 'Peaceful Lilies', price: 120, image: 'https://images.unsplash.com/photo-1526047932273-341f2a7631f9?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80', description: 'Graceful white lilies for comfort.' },
-  { id: '3', name: 'Memory Basket', price: 95, image: 'https://images.unsplash.com/photo-1519336367661-eba9c1dfa5e9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80', description: 'Warm colors to remember a loved one.' },
-];
+interface Product {
+  name: string;
+  slug: string;
+  price: number;
+  imagePaths: string[];
+  category: string;
+}
 
 export default function SympathyPage() {
+  const [products, setProducts] = useState<Product[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    async function loadProducts() {
+      try {
+        const res = await fetch('/api/products?limit=12');
+        const data = await res.json();
+        // Filter for sympathy-related products
+        const sympathy = data.filter((p: any) => 
+          p.category.toLowerCase().includes('sympathy') || 
+          p.category.toLowerCase().includes('casket') ||
+          p.category.toLowerCase().includes('spray')
+        ).slice(0, 6);
+        setProducts(sympathy.length > 0 ? sympathy : data.slice(0, 6));
+      } catch (error) {
+        console.error('Error loading products:', error);
+      } finally {
+        setLoading(false);
+      }
+    }
+
+    loadProducts();
+  }, []);
+
   return (
-    <main className="min-h-screen bg-white">
+    <div className="min-h-screen flex flex-col bg-white">
       <AnnouncementBar />
       <Header />
-      
-      <Section title="" className="pt-24 pb-12">
-        <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-4xl md:text-5xl font-serif mb-6">Sympathy & Funeral Flowers</h1>
-          <p className="text-gray-600 text-lg mb-12">
-            Express your deepest condolences with our collection of elegant and respectful floral arrangements. We handle every sympathy order with care and compassion.
-          </p>
-        </div>
-      </Section>
 
-      <Section title="" className="pb-24">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {products.map((product) => (
-            <ProductCard 
-              key={product.id}
-              id={product.id}
-              name={product.name}
-              price={product.price}
-              image={product.image}
-            />
-          ))}
+      <main className="flex-1">
+        {/* Hero */}
+        <div className="relative h-[400px] md:h-[500px] overflow-hidden mb-16">
+          <Image
+            src="/media/ef-sympathy-bouquet-fts-326a94947d.webp"
+            alt="Sympathy flowers"
+            fill
+            className="object-cover"
+            priority
+          />
+          <div className="absolute inset-0 bg-black/40" />
+          <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4">
+            <h1 className="text-4xl md:text-5xl font-light text-white mb-4">
+              Sympathy & Funeral Flowers
+            </h1>
+            <p className="text-lg text-white/90 max-w-2xl">
+              Honor your loved one with thoughtfully arranged sympathy flowers
+            </p>
+          </div>
         </div>
-      </Section>
 
-      <Section title="" className="bg-stone-50 py-24">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl font-serif mb-6">Custom Tributes</h2>
-          <p className="text-gray-600 mb-8 leading-relaxed">
-            For specific requests or custom funeral pieces, please contact our studio directly. We work closely with local funeral homes to ensure timely and respectful delivery.
-          </p>
-          <a href="/contact" className="inline-block border-b-2 border-black pb-1 font-medium hover:text-gray-600 transition-colors">
-            Inquire About Custom Services
-          </a>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Content */}
+          <div className="grid md:grid-cols-2 gap-12 mb-16">
+            <div>
+              <h2 className="text-3xl font-light mb-6">Expressing Sympathy</h2>
+              <p className="text-gray-700 leading-relaxed mb-4">
+                During times of loss, flowers provide comfort and express care. 
+                When you order funeral flowers from Chey Florist, our skilled and compassionate 
+                florist will work directly with the funeral home to ensure that your delivery is
+                timely and accurate.
+              </p>
+              <p className="text-gray-700 leading-relaxed mb-4">
+                We offer same-day delivery for sympathy arrangements. Please call (929) 216-7775 for assistance.
+              </p>
+              <p className="text-gray-700 leading-relaxed">
+                Funeral flowers are sent to a church service or funeral home to 
+                honor the departed's religious or cultural beliefs with appropriate arrangements
+                for a viewing, wake, funeral, cremation, or graveside service.
+              </p>
+            </div>
+            <div className="relative h-96 rounded-2xl overflow-hidden">
+              <Image
+                src="/media/ef-sympathy-spray-wreath-fts-116be2a707.webp"
+                alt="Sympathy wreath"
+                fill
+                className="object-cover"
+              />
+            </div>
+          </div>
+
+          {/* Featured Products */}
+          {!loading && products.length > 0 && (
+            <Section title="Featured Sympathy Arrangements">
+              <div className="grid md:grid-cols-3 gap-8">
+                {products.slice(0, 3).map((product: Product) => (
+                  <ProductCard
+                    key={product.slug}
+                    name={product.name}
+                    slug={product.slug}
+                    price={product.price}
+                    imagePath={product.imagePaths?.[0] || '/media/placeholder.webp'}
+                    category={product.category}
+                  />
+                ))}
+              </div>
+            </Section>
+          )}
+
+          {/* CTA */}
+          <div className="bg-rose-50 rounded-2xl px-8 md:px-12 py-12 text-center mb-16">
+            <h3 className="text-2xl font-light mb-4">
+              Let Us Help Honor Your Loved One
+            </h3>
+            <p className="text-gray-700 mb-6 max-w-2xl mx-auto">
+              Our compassionate florists are here to help you create the perfect
+              arrangement. Same-day delivery available.
+            </p>
+            <a
+              href="tel:(929) 216-7775"
+              className="inline-block px-8 py-3 bg-rose-600 text-white font-medium rounded-lg hover:bg-rose-700 transition"
+            >
+              Call (929) 216-7775
+            </a>
+          </div>
         </div>
-      </Section>
+      </main>
 
       <Footer />
-    </main>
+    </div>
   );
 }
