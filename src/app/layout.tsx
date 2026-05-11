@@ -1,10 +1,9 @@
 import "./globals.css"
-import Navbar from "@/lib/components/navbar"
-import Footer from "@/lib/components/footer"
 
 export const metadata = {
-  title: "Business Name",
-  description: "Short description of the business."
+  title: "Chey Florist - Fresh Flower Delivery in Staten Island, NY",
+  description: "Hand-arranged fresh flowers for every occasion. Same-day delivery in Staten Island, NY. Premium arrangements for birthdays, anniversaries, weddings, sympathy, and more.",
+  keywords: "florist, flowers, Staten Island, delivery, arrangements, fresh flowers",
 }
 
 export default function RootLayout({
@@ -14,12 +13,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="min-h-screen flex flex-col">
-        <Navbar />
-        <main className="flex-1 max-w-6xl mx-auto px-6 py-12">
-          {children}
-        </main>
-        <Footer />
+      <body className="min-h-screen flex flex-col bg-white">
+        {children}
       </body>
     </html>
   )
