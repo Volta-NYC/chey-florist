@@ -1,36 +1,40 @@
-import { readFileSync } from 'fs';
-import { join } from 'path';
 import { NextRequest, NextResponse } from 'next/server';
+import { getCollectionBySlug, getProductsForCollection, products, searchProducts } from '@/lib/data';
+import type { Product } from '@/lib/types';
+
+function parseLimit(value: string | null): number {
+  const parsed = Number(value ?? 50);
+  if (!Number.isFinite(parsed)) return 50;
+  return Math.max(1, Math.min(200, Math.trunc(parsed)));
+}
 
 export async function GET(request: NextRequest) {
   try {
     const { searchParams } = new URL(request.url);
-    const limit = parseInt(searchParams.get('limit') || '50');
+    const limit = parseLimit(searchParams.get('limit'));
     const category = searchParams.get('category');
     const search = searchParams.get('q');
 
-    const filePath = join(process.cwd(), 'data', 'products.json');
-    const data = readFileSync(filePath, 'utf-8');
-    let products = JSON.parse(data);
+    let result: Product[] = products;
 
     // Filter by category if provided
     if (category && category !== 'all') {
-      products = products.filter((p: any) => p.category === category || p.slug === category);
+      const collection = getCollectionBySlug(category);
+      result = collection
+        ? getProductsForCollection(collection.slug)
+        : result.filter((p) => p.category === category || p.slug === category);
     }
 
     // Filter by search if provided
     if (search) {
-      const searchLower = search.toLowerCase();
-      products = products.filter((p: any) =>
-        p.name.toLowerCase().includes(searchLower) ||
-        p.fullDescription.toLowerCase().includes(searchLower)
-      );
+      const matches = new Set(searchProducts(search).map((p) => p.slug));
+      result = result.filter((p) => matches.has(p.slug));
     }
 
     // Apply limit
-    products = products.slice(0, limit);
+    result = result.slice(0, limit);
 
-    return NextResponse.json(products);
+    return NextResponse.json(result);
   } catch (error) {
     console.error('Error fetching products:', error);
     return NextResponse.json({ error: 'Failed to fetch products' }, { status: 500 });

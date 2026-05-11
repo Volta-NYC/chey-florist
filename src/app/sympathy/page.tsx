@@ -8,7 +8,7 @@ import { useEffect, useState } from 'react';
 interface Product {
   name: string;
   slug: string;
-  price: number;
+  price: number | null;
   imagePaths: string[];
   category: string;
 }
@@ -20,21 +20,10 @@ export default function SympathyPage() {
   useEffect(() => {
     async function load() {
       try {
-        const res = await fetch('/api/products?limit=40');
-        const data: Product[] = await res.json();
-        const filtered = data.filter((p) => {
-          const c = (p.category || '').toLowerCase();
-          const n = (p.name || '').toLowerCase();
-          return (
-            c.includes('sympathy') ||
-            c.includes('casket') ||
-            c.includes('spray') ||
-            c.includes('funeral') ||
-            n.includes('memorial') ||
-            n.includes('peace')
-          );
-        }).slice(0, 8);
-        setProducts(filtered.length > 0 ? filtered : data.slice(0, 8));
+        const res = await fetch('/api/collections/sympathy-bouquets');
+        if (!res.ok) throw new Error('Failed to load sympathy collection');
+        const data: { products?: Product[] } = await res.json();
+        setProducts((data.products ?? []).slice(0, 8));
       } catch (e) {
         console.error(e);
       } finally {
@@ -194,7 +183,7 @@ export default function SympathyPage() {
                       name={p.name}
                       slug={p.slug}
                       price={p.price}
-                      imagePath={p.imagePaths?.[0] || '/media/placeholder.webp'}
+                      imagePath={p.imagePaths?.[0]}
                       category={p.category}
                       index={i}
                     />

@@ -10,8 +10,7 @@
       "When you shop flowers online with Chey Florist, you will see beautiful bouquet arrangements of flowers hand-crafted with passion, attention to detail, and great care.",
       "Chey Florist is committed to creating beautiful flower arrangements and floral gifts for any occasion. From Anniversary and Birthday flowers, to Valentine’s and Mother’s Day flowers, Chey Florist has the best selection of floral designs for every unique occasion.",
       "As a top florist in Staten Island, NY, each of our floral arrangements get the time and personalized attention they deserve. Chey Florist passionately makes all bouquets in house, and personally delivers to your recipient in Staten Island so they are guaranteed to receive fresh and beautiful flowers every time with an added personal touch. Pick out a gorgeous floral arrangement on our website and order flowers online through our convenient and secure checkout page. Chey Florist will expertly arrange your bouquet of beautiful blooms and can even create a custom arrangement or gift basket for your special occasion.",
-      "Chey Florist offers flower delivery in and around Staten Island, as well as nationwide delivery through our reliable florist network! Chey Florist provides same-day flower delivery for your last minute gift needs in Staten Island, NY as well.",
-      "At Chey Florist we want to provide our customers with clear pricing information. By providing your zip/postal code, you will see the pricing including all mandatory fees for your delivery area."
+      "Chey Florist offers flower delivery in and around Staten Island, as well as nationwide delivery through our reliable florist network! Chey Florist provides same-day flower delivery for your last minute gift needs in Staten Island, NY as well."
     ],
     "imagePaths": [
       "/media/43475100-chey-florist-18a0d1d1f5.webp",
@@ -45,14 +44,14 @@
       "You can expect great customer service, fresh flower arrangements, beautiful floral designs, plants, gift baskets and much more.",
       "Make Chey Florist your first choice for flowers.",
       "We specialize in the following services:",
-      "- Large inventory of fresh flowers for any occasion",
-      "- Birthday Flowers, Get Well Flowers, Anniversary Flowers",
-      "- Modern and traditional flower arrangements",
       "A local delivery fee of $15.00 will be added to each order, for each address. (For deliveries outside our local delivery area, this fee may vary.)",
       "U.S. orders must be received before 1:00 p.m. in the recipient's time zone to assure same-day delivery. Orders received after that time will be delivered the following day.",
       "We will do our best to accommodate deliveries at specific times of day, but we cannot guarantee it.",
       "We are unable to make deliveries on Sundays. Deliveries requested on this day will be delivered the following business day.",
-      "Delivery of orders to rural route addresses or cemeteries cannot be guaranteed."
+      "Delivery of orders to rural route addresses or cemeteries cannot be guaranteed.",
+      "We will be happy to accept your international orders if you call our shop directly. We are unable to accept international orders over the Internet.",
+      "To help assure on-time delivery during the busy holiday season, place your order at least 1 day prior to the following major holidays: Thanksgiving Day, Christmas Day, New Year's Day, Valentine's Day, Easter, Administrative Professionals Week, Mother's Day, Memorial Day, Father's Day, Independence Day and Labor Day.",
+      "Our shop will always be closed on the following holidays: Thanksgiving Day, Christmas Day, New Year's Day, Easter, Mother's Day, Memorial Day, Father's Day, Independence Day and Labor Day."
     ]
   },
   {
@@ -66,24 +65,14 @@
       "find what you are looking for or need immediate assistance, please contact us via phone or email and we'll be happy to help!",
       "Our shop locally serves the following cities and surrounding areas:",
       "Yes we do! Here is a list of hospitals that we deliver to locally.",
-      "- Richmond University Med Ctr Bayley Seton Hospital",
-      "- Richmond Center for Rehab and Specialty Healthcare",
       "If you do not see the hospital you are looking for, please give us a call at (929) 216-7775, we may be able to accommodate special requests.",
       "Yes we can. We deliver to local funeral homes daily. Below is a list of the funeral homes that we deliver to.",
-      "- John Vincent Scalia Home for funerals, inc.",
-      "- Casey Mccallum Rice South Shore Funeral Home",
-      "- Casey McCallum Rice South Shor Funeral",
-      "If you do not see the funeral home you are looking for, please give us a call at (929) 216-7775, we may be able to accommodate special requests."
-    ]
-  },
-  {
-    "title": "Site Map",
-    "slug": "sitemap",
-    "pageType": "general",
-    "url": "https://www.cheyfloristsi.com/sitemap",
-    "sourceMarkdownFile": "raw messy data/www.cheyfloristsi.com_sitemap.md",
-    "content": [
-      "At Chey Florist we want to provide our customers with clear pricing information. By providing your zip/postal code, you will see the pricing including all mandatory fees for your delivery area."
+      "If you do not see the funeral home you are looking for, please give us a call at (929) 216-7775, we may be able to accommodate special requests.",
+      "Yes, we do. Nothing brightens someone's day like flowers. Here is a list of local nursing homes that we deliver flowers to, daily.",
+      "If you do not see the nursing home you are looking for, please give us a call at (929) 216-7775, we may be able to accommodate special requests.",
+      "Of course we do! Below is a list that we deliver to.",
+      "If you do not see the retirement community you are looking for, please give us a call at (929) 216-7775, we may be able to accommodate special requests.",
+      "Oh no! We apologize for the inconvenience. Please make sure you’re using the most recent version of your browser program. If not, you may need to download an update from the software maker’s website. If the problem persists, please call us at (929) 216-7775 and we are more than happy to help you over the phone."
     ]
   },
   {
@@ -98,8 +87,7 @@
       "Funeral flowers are sent to a church service or funeral home. A local florist will deliver your flowers to the funeral or memorial service.",
       "Honor the departed's religious or cultural belief with flowers appropriate for a viewing or wake, funeral, cremation or graveside service.",
       "Sympathy flowers and fruit baskets are sent to the departed's home to comfort the family during their time of sorrow.",
-      "It is not always easy to write a heartfelt message that expresses how you feel, especially at a time of sorrow so we have written some card suggestions for different occasions.",
-      "At Chey Florist we want to provide our customers with clear pricing information. By providing your zip/postal code, you will see the pricing including all mandatory fees for your delivery area."
+      "It is not always easy to write a heartfelt message that expresses how you feel, especially at a time of sorrow so we have written some card suggestions for different occasions."
     ],
     "imagePaths": [
       "/media/ef-sympathy-casket-fts-05a1b81a5b.webp",
@@ -122,7 +110,6 @@
     "content": [
       "Chey Florist offers a wide selection of bridal bouquets, wedding ceremony flowers and centerpieces.",
       "| --- | --- | --- | --- | --- | --- | --- |",
-      "At Chey Florist we want to provide our customers with clear pricing information. By providing your zip/postal code, you will see the pricing including all mandatory fees for your delivery area.",
       "For site owner: v1beta1 is deprecated. [Take action.](https://docs.cloud.google.com/recaptcha/docs/migration-v1)"
     ]
   },
@@ -140,8 +127,7 @@
       "Blue flowers include lofty blue irises, puffy hydrangea and striking blue delphinium. Ask for blue blossoms in a bridal bouquet as your 'something blue,' or to cast a cool tone over an outdoor wedding reception.",
       "Yellow flowers are sunny and bright, and add a cheerful spirit to any celebration. Ask a florist to use yellow lilies, lemon-yellow snapdragons or brilliant yellow sunflowers in the floral designs for your summertime wedding.",
       "Purple flowers are whimsical and unique. The rich purples of dahlias make a fanciful statement during a wedding ceremony, while pale mauve lilacs and lavender roses have an old-fashioned, artistic charm.",
-      "Green flowers are unexpected and elegant. Use pale green roses to brighten up a centerpiece, or viburnum to accent a wedding bouquet. Light green cymbidium orchids bring an alluring drama to your wedding flowers, while light green gladiolus and green tul",
-      "At Chey Florist we want to provide our customers with clear pricing information. By providing your zip/postal code, you will see the pricing including all mandatory fees for your delivery area."
+      "Green flowers are unexpected and elegant. Use pale green roses to brighten up a centerpiece, or viburnum to accent a wedding bouquet. Light green cymbidium orchids bring an alluring drama to your wedding flowers, while light green gladiolus and green tul"
     ],
     "imagePaths": [
       "/media/pink-left-d67875b03d.webp",
@@ -174,8 +160,7 @@
     "url": "https://www.cheyfloristsi.com/wedding-flowers",
     "sourceMarkdownFile": "raw messy data/www.cheyfloristsi.com_wedding-flowers.md",
     "content": [
-      "Chey Florist offers a wide selection of bridal bouquets, wedding ceremony flowers and centerpieces.",
-      "At Chey Florist we want to provide our customers with clear pricing information. By providing your zip/postal code, you will see the pricing including all mandatory fees for your delivery area."
+      "Chey Florist offers a wide selection of bridal bouquets, wedding ceremony flowers and centerpieces."
     ]
   },
   {
@@ -190,7 +175,6 @@
       "-![Wedding Reception Flowers](https://assets.eflorist.com/images/wedding/gallery/reception/reception-2.jpg)",
       "-![Wedding Reception Flowers](https://assets.eflorist.com/images/wedding/gallery/reception/reception-1.jpg)",
       "-![wedding party flowers](https://assets.eflorist.com/images/wedding/gallery/party/party-1.jpg)",
-      "At Chey Florist we want to provide our customers with clear pricing information. By providing your zip/postal code, you will see the pricing including all mandatory fees for your delivery area.",
       "This page has been blocked by an extension"
     ],
     "imagePaths": [
@@ -216,8 +200,7 @@
       "Roses, sunflowers, Asiatic lilies, gerbera daisies, peonies, stock, delphiniums, irises, calla lilies, lisianthus",
       "Roses, tulips, peonies, anemones, calla lilies, hyacinths, irises, daffodils, hydrangea, lily of the valley, sweet pea, delphinium",
       "Roses, tulips, hydrangea, amaryllis, lilies, orchids, stephanotis, ivy, evergreens",
-      "Roses, gerbera daisies, hydrangea, delphinium, amaryllis, carnations, viburnum, irises, narcissus, autumn leaves, pumpkins",
-      "At Chey Florist we want to provide our customers with clear pricing information. By providing your zip/postal code, you will see the pricing including all mandatory fees for your delivery area."
+      "Roses, gerbera daisies, hydrangea, delphinium, amaryllis, carnations, viburnum, irises, narcissus, autumn leaves, pumpkins"
     ],
     "imagePaths": [
       "/media/summer-left-d8fd878de9.webp",
@@ -241,8 +224,7 @@
     "url": "https://www.cheyfloristsi.com/wedding-shop-products",
     "sourceMarkdownFile": "raw messy data/www.cheyfloristsi.com_wedding-shop-products.md",
     "content": [
-      "Chey Florist offers a wide selection of bridal bouquets, wedding ceremony flowers and centerpieces.",
-      "At Chey Florist we want to provide our customers with clear pricing information. By providing your zip/postal code, you will see the pricing including all mandatory fees for your delivery area."
+      "Chey Florist offers a wide selection of bridal bouquets, wedding ceremony flowers and centerpieces."
     ]
   }
 ]

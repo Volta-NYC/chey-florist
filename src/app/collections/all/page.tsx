@@ -6,7 +6,7 @@ import { useState, useEffect } from 'react';
 interface Product {
   name: string;
   slug: string;
-  price: number;
+  price: number | null;
   imagePaths: string[];
   category: string;
 }
@@ -96,7 +96,7 @@ export default function AllProductsPage() {
                         name={product.name}
                         slug={product.slug}
                         price={product.price}
-                        imagePath={product.imagePaths?.[0] || '/media/placeholder.webp'}
+                        imagePath={product.imagePaths?.[0]}
                         category={product.category}
                         index={(page - 1) * itemsPerPage + i}
                       />

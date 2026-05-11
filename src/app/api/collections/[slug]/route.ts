@@ -1,58 +1,37 @@
-import { readFileSync } from 'fs';
-import { join } from 'path';
 import { NextRequest, NextResponse } from 'next/server';
+import { getCollectionBySlug, getProductsForCollection, products } from '@/lib/data';
 
 export async function GET(
-  request: NextRequest,
+  _request: NextRequest,
   { params }: { params: Promise<{ slug: string }> }
 ) {
   try {
     const { slug } = await params;
 
+    if (slug === 'all') {
+      return NextResponse.json({
+        name: 'All Flowers',
+        slug: 'all',
+        description: 'Every available arrangement from the Chey Florist studio.',
+        type: 'general',
+        imagePaths: [],
+        productSlugs: products.map((product) => product.slug),
+        sourcePageUrl: '',
+        sourceMarkdownFile: '',
+        products: products.slice(0, 100),
+      });
+    }
 
-    // Read collections
-    const collectionsPath = join(process.cwd(), 'data', 'collections.json');
-    const collectionsData = readFileSync(collectionsPath, 'utf-8');
-    const collections = JSON.parse(collectionsData);
-
-    const collection = collections.find((c: any) => c.slug === slug);
-
+    const collection = getCollectionBySlug(slug);
     if (!collection) {
       return NextResponse.json({ error: 'Collection not found' }, { status: 404 });
     }
 
-    // Read products and filter by category
-    const productsPath = join(process.cwd(), 'data', 'products.json');
-    const productsData = readFileSync(productsPath, 'utf-8');
-    let products = JSON.parse(productsData);
-
-    // Filter products by matching collection slug to category or creating matches
-    if (slug === 'all') {
-      // All collection shows all products
-      products = products;
-    } else if (collection.productSlugs && collection.productSlugs.length > 0) {
-      // Use product slugs if they exist in the collection
-      products = products.filter((p: any) => collection.productSlugs.includes(p.slug));
-    } else {
-      // Otherwise try to match by category name
-      const categoryName = collection.name
-        .toLowerCase()
-        .replace('flowers delivery staten island ny - chey florist', '')
-        .replace('flowers in staten island, ny | chey florist', '')
-        .replace(' delivery staten island ny', '')
-        .replace('|', '')
-        .trim();
-
-      products = products.filter((p: any) => {
-        const productCategory = p.category.toLowerCase();
-        const collectionName = collection.name.toLowerCase();
-        return productCategory.includes(slug) || collectionName.includes(productCategory);
-      });
-    }
+    const collectionProducts = getProductsForCollection(slug);
 
     return NextResponse.json({
       ...collection,
-      products: products.slice(0, 100), // Return first 100 products
+      products: collectionProducts.slice(0, 100),
     });
   } catch (error) {
     console.error('Error fetching collection:', error);

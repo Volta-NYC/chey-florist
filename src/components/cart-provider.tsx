@@ -27,13 +27,24 @@ type CartContextValue = {
 
 const CartContext = createContext<CartContextValue | null>(null)
 
+function normalizeQty(qty: number, min = 1): number {
+  if (!Number.isFinite(qty)) return min
+  return Math.max(min, Math.min(99, Math.trunc(qty)))
+}
+
 function readStorage(): CartLine[] {
   if (typeof window === "undefined") return []
   try {
     const raw = window.localStorage.getItem(STORAGE_KEY)
     if (!raw) return []
     const parsed = JSON.parse(raw) as CartLine[]
-    return Array.isArray(parsed) ? parsed : []
+    if (!Array.isArray(parsed)) return []
+    return parsed
+      .map((line) => ({
+        slug: typeof line?.slug === "string" ? line.slug : "",
+        qty: normalizeQty(Number(line?.qty)),
+      }))
+      .filter((line) => line.slug)
   } catch {
     return []
   }
@@ -57,7 +68,7 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
 
   const add = useCallback(
     (slug: string, qty = 1) => {
-      const safeQty = Math.max(1, qty)
+      const safeQty = normalizeQty(qty)
       const idx = lines.findIndex((l) => l.slug === slug)
       if (idx === -1) {
         persist([...lines, { slug, qty: safeQty }])
@@ -72,7 +83,7 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
 
   const setQty = useCallback(
     (slug: string, qty: number) => {
-      const safe = Math.max(0, Math.min(99, qty))
+      const safe = normalizeQty(qty, 0)
       if (safe === 0) {
         persist(lines.filter((l) => l.slug !== slug))
         return

@@ -2,12 +2,13 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
+import { formatUsd } from '@/lib/format';
 
 interface ProductCardProps {
   name: string;
   slug: string;
-  price: number;
-  imagePath: string;
+  price: number | null;
+  imagePath?: string;
   category: string;
   badges?: string[];
   index?: number;
@@ -36,7 +37,11 @@ export function ProductCard({ name, slug, price, imagePath, category, badges = [
 
         {/* Image with hover-only wash + cream corner brackets + sliding plate (all clipped inside) */}
         <div className="img-wrap relative aspect-[4/5]">
-          <Image src={imagePath} alt={name} fill className="object-cover" sizes="(min-width: 1024px) 25vw, 50vw" />
+          {imagePath ? (
+            <Image src={imagePath} alt={name} fill className="object-cover" sizes="(min-width: 1024px) 25vw, 50vw" />
+          ) : (
+            <div className="absolute inset-0 bg-gradient-to-br from-bone via-cream to-moss/20" />
+          )}
 
           {/* Cream corner brackets */}
           <span className="frame" aria-hidden="true">
@@ -61,7 +66,7 @@ export function ProductCard({ name, slug, price, imagePath, category, badges = [
         </div>
         <div className="text-right shrink-0">
           <div className="eyebrow text-ink/40 mb-1">From</div>
-          <div className="display italic text-xl text-oxblood">${price.toFixed(0)}</div>
+          <div className="display italic text-xl text-oxblood">{formatUsd(price)}</div>
         </div>
       </div>
     </Link>

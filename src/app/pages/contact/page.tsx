@@ -21,8 +21,19 @@ export default function ContactPage() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // In a real app, you'd send this to an email service
-    console.log('Form submitted:', formData);
+    const subject = encodeURIComponent(`Website inquiry from ${formData.name}`);
+    const body = encodeURIComponent(
+      [
+        `Name: ${formData.name}`,
+        `Email: ${formData.email}`,
+        formData.phone ? `Phone: ${formData.phone}` : null,
+        '',
+        formData.message,
+      ]
+        .filter(Boolean)
+        .join('\n'),
+    );
+    window.location.href = `mailto:cheyflorist509@gmail.com?subject=${subject}&body=${body}`;
     setSubmitted(true);
     setFormData({ name: '', email: '', phone: '', message: '' });
     setTimeout(() => setSubmitted(false), 5000);
@@ -97,7 +108,7 @@ export default function ContactPage() {
               <form onSubmit={handleSubmit} className="space-y-6">
                 {submitted && (
                   <div className="p-4 bg-green-50 border border-green-200 rounded-lg text-green-700">
-                    Thank you! We'll get back to you soon.
+                    Your email app should open with the message ready to send.
                   </div>
                 )}
 
@@ -144,7 +155,7 @@ export default function ContactPage() {
                     value={formData.phone}
                     onChange={handleChange}
                     className="w-full px-4 py-2 border border-ink/25 rounded-lg focus:ring-2 focus:ring-rose-600 focus:border-transparent"
-                    placeholder="(555) 000-0000"
+                    placeholder="(000) 000-0000"
                   />
                 </div>
 

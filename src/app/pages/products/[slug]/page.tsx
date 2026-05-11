@@ -1,6 +1,8 @@
 'use client';
 
-import { Header, Footer, AnnouncementBar, Section } from '@/components';
+import { Header, Footer, AnnouncementBar } from '@/components';
+import { useCart } from '@/components/cart-provider';
+import { formatUsd } from '@/lib/format';
 import { useParams } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import { notFound } from 'next/navigation';
@@ -10,8 +12,8 @@ import Link from 'next/link';
 interface Product {
   name: string;
   slug: string;
-  price: number;
-  compareAtPrice?: number;
+  price: number | null;
+  compareAtPrice?: number | null;
   imagePaths: string[];
   category: string;
   fullDescription: string;
@@ -27,11 +29,13 @@ interface Product {
 export default function ProductPage() {
   const params = useParams();
   const slug = params.slug as string;
+  const { add } = useCart();
   const [product, setProduct] = useState<Product | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [selectedVariant, setSelectedVariant] = useState(0);
   const [selectedImage, setSelectedImage] = useState(0);
+  const [added, setAdded] = useState(false);
 
   useEffect(() => {
     async function loadProduct() {
@@ -57,6 +61,10 @@ export default function ProductPage() {
     }
   }, [slug]);
 
+  useEffect(() => {
+    setAdded(false);
+  }, [selectedVariant, slug]);
+
   if (loading) {
     return (
       <div className="min-h-screen flex flex-col bg-transparent">
@@ -77,6 +85,11 @@ export default function ProductPage() {
   }
 
   const currentVariant = product.variants?.[selectedVariant];
+  const handleAddToCart = () => {
+    if (product.availability !== 'available') return;
+    add(product.slug);
+    setAdded(true);
+  };
 
   return (
     <div className="min-h-screen flex flex-col bg-transparent">
@@ -149,17 +162,17 @@ export default function ProductPage() {
                   {currentVariant ? (
                     <div>
                       <p className="text-3xl font-semibold text-ink">
-                        ${currentVariant.price.toFixed(2)}
+                        {formatUsd(currentVariant.price)}
                       </p>
                       {product.compareAtPrice && product.compareAtPrice > currentVariant.price && (
                         <p className="text-lg text-ink/50 line-through">
-                          ${product.compareAtPrice.toFixed(2)}
+                          {formatUsd(product.compareAtPrice)}
                         </p>
                       )}
                     </div>
                   ) : (
                     <p className="text-3xl font-semibold text-ink">
-                      ${product.price.toFixed(2)}
+                      {formatUsd(product.price)}
                     </p>
                   )}
                 </div>
@@ -208,10 +221,15 @@ export default function ProductPage() {
               {/* CTA */}
               <div className="space-y-3 pt-6">
                 <button
+                  onClick={handleAddToCart}
                   disabled={product.availability !== 'available'}
                   className="w-full px-6 py-4 bg-oxblood text-white font-medium rounded-lg hover:bg-ink transition disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  {product.availability === 'available' ? 'Add to Cart' : 'Out of Stock'}
+                  {product.availability === 'available'
+                    ? added
+                      ? 'Added to Cart'
+                      : 'Add to Cart'
+                    : 'Out of Stock'}
                 </button>
                 <a
                   href="tel:(929) 216-7775"

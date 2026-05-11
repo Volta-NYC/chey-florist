@@ -90,6 +90,17 @@ function parseLinks(content) {
   return links;
 }
 
+function parseProductUrls(content) {
+  const urlRegex = /https?:\/\/[^\s)\]]+/g;
+  const urls = [];
+  let match;
+  while ((match = urlRegex.exec(content)) !== null) {
+    const url = match[0].replace(/[.,;]+$/g, "");
+    if (isProductDetailUrl(url)) urls.push(url);
+  }
+  return unique(urls);
+}
+
 function parseImages(content) {
   const imageRegex = /!\[([^\]]*?)\]\((https?:\/\/[^\s)]+)\)/g;
   const images = [];
@@ -294,13 +305,29 @@ function parseCollections(fileRecords) {
     const links = parseLinks(record.body).filter((link) =>
       /\/p_ef|\/prod\d+|\/bouquet|\/arrangement|\/plant|\/basket|\/flower|\/sympathy-/i.test(link.url),
     );
+    const productUrls = unique([
+      ...parseProductUrls(record.body),
+      ...links.map((link) => link.url).filter((linkUrl) => isProductDetailUrl(linkUrl)),
+    ]);
     const urlObj = new URL(url);
     const slug = slugify(urlObj.pathname.split("/").filter(Boolean).slice(-2, -1)[0] || title || url);
+    const heading = record.body.match(/^#\s+(.+)$/m)?.[1];
+    const name = cleanText(
+      (heading || title || "")
+        .replace(/^Buy\s+/i, "")
+        .replace(/\s+from.+$/i, ""),
+    ) || slug;
+    const description = unique(
+      record.body
+        .split("\n")
+        .map((line) => cleanText(line))
+        .filter((line) => isEditorialLine(line)),
+    )[0] || "";
     if (!collectionsBySlug.has(slug)) {
       collectionsBySlug.set(slug, {
-        name: cleanText((title || "").replace(/^Buy\s+/i, "").replace(/\s+from.+$/i, "")) || slug,
+        name,
         slug,
-        description: "",
+        description,
         type: /season|spring|easter|mother|valentine|christmas|new-years|hanukkah|fathers-day|sweetest-day/i.test(
           `${title} ${url}`,
         )
@@ -317,10 +344,13 @@ function parseCollections(fileRecords) {
       });
     }
     const existing = collectionsBySlug.get(slug);
+    if (!existing.description && description) {
+      existing.description = description;
+    }
     existing.productSlugs = unique([
       ...existing.productSlugs,
-      ...links
-        .map((link) => productPathSlug(link.url) || slugify(link.label))
+      ...productUrls
+        .map((productUrl) => productPathSlug(productUrl))
         .filter((s) => s && s !== "shop-now" && s !== "buy-now"),
     ]);
   }
@@ -343,9 +373,12 @@ function isCategoryListingUrl(urlStr) {
 function isEditorialLine(line) {
   if (line.length < 40) return false;
   if (line.startsWith("[") || line.startsWith("![") || line.includes("![](")) return false;
+  if (/^\-\s/.test(line)) return false;
   if (/^\-\s*\[/.test(line)) return false;
   if (/cheyfloristsi\.com/.test(line)) return false;
   if (/Only three add on items/i.test(line)) return false;
+  if (/Filter Your Results|Sign up for special offers|session about to expire/i.test(line)) return false;
+  if (/clear pricing information|mandatory fees|zip\/postal code/i.test(line)) return false;
   if (/^\$[0-9]/.test(line) && line.includes("Buy Now")) return false;
   if (line.includes("Compare Your Favorites")) return false;
   if (line.includes("Select ZIP")) return false;

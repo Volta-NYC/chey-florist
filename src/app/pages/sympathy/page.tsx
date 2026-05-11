@@ -8,7 +8,7 @@ import { useEffect, useState } from 'react';
 interface Product {
   name: string;
   slug: string;
-  price: number;
+  price: number | null;
   imagePaths: string[];
   category: string;
 }
@@ -21,7 +21,8 @@ export default function SympathyPage() {
     async function loadProducts() {
       try {
         const res = await fetch('/api/products?category=casket-sprays&limit=12');
-        const data = await res.json();
+        if (!res.ok) throw new Error('Failed to load sympathy products');
+        const data: Product[] = await res.json();
         setProducts(data);
       } catch (error) {
         console.error('Error loading products:', error);
@@ -118,7 +119,7 @@ export default function SympathyPage() {
                     name={product.name}
                     slug={product.slug}
                     price={product.price}
-                    imagePath={product.imagePaths?.[0] || '/media/placeholder.webp'}
+                    imagePath={product.imagePaths?.[0]}
                     category={product.category}
                   />
                 ))}

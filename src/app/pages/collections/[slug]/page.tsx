@@ -1,6 +1,6 @@
 'use client';
 
-import { Header, Footer, AnnouncementBar, Section, ProductCard } from '@/components';
+import { Header, Footer, AnnouncementBar, ProductCard } from '@/components';
 import { useParams } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import { notFound } from 'next/navigation';
@@ -8,7 +8,7 @@ import { notFound } from 'next/navigation';
 interface Product {
   name: string;
   slug: string;
-  price: number;
+  price: number | null;
   imagePaths: string[];
   category: string;
 }
@@ -102,7 +102,7 @@ export default function CollectionPage() {
                   name={product.name}
                   slug={product.slug}
                   price={product.price}
-                  imagePath={product.imagePaths?.[0] || '/media/placeholder.webp'}
+                  imagePath={product.imagePaths?.[0]}
                   category={product.category}
                 />
               ))}

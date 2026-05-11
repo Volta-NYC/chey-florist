@@ -1,6 +1,6 @@
 'use client';
 
-import { Header, Footer, AnnouncementBar, Section } from '@/components';
+import { Header, Footer, AnnouncementBar } from '@/components';
 import Link from 'next/link';
 
 export default function AboutPage() {

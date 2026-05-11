@@ -8,7 +8,7 @@ import Image from 'next/image';
 interface Product {
   name: string;
   slug: string;
-  price: number;
+  price: number | null;
   imagePaths: string[];
   category: string;
 }
@@ -22,10 +22,10 @@ export default function WeddingEventsPage() {
       try {
         // Fetch wedding-related products (bouquets, arrangements, etc.)
         const res = await fetch('/api/products?limit=20');
-        const data = await res.json();
+        const data: Product[] = await res.json();
         // Filter to show upscale arrangements
-        const filtered = data.filter((p: any) => 
-          p.price > 50 || p.name.toLowerCase().includes('bouquet') || 
+        const filtered = data.filter((p) => 
+          (p.price ?? 0) > 50 || p.name.toLowerCase().includes('bouquet') || 
           p.name.toLowerCase().includes('luxury')
         );
         setProducts(filtered.slice(0, 12));
@@ -142,7 +142,7 @@ export default function WeddingEventsPage() {
                     name={product.name}
                     slug={product.slug}
                     price={product.price}
-                    imagePath={product.imagePaths?.[0] || '/media/placeholder.webp'}
+                    imagePath={product.imagePaths?.[0]}
                     category={product.category}
                   />
                 ))}

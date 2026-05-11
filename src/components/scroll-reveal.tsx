@@ -14,7 +14,9 @@ export function ScrollReveal() {
 
     // If the browser supports native scroll-driven animations, skip JS entirely.
     const supportsNative =
-      CSS && CSS.supports && CSS.supports('animation-timeline: view()');
+      typeof CSS !== 'undefined' &&
+      CSS.supports &&
+      CSS.supports('animation-timeline: view()');
     if (supportsNative) return;
 
     const selector =
