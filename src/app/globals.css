@@ -96,15 +96,108 @@ html, body {
 }
 .link-edit:hover::after { transform: scaleX(1); transform-origin: left center; }
 
-/* Product card hover reveal */
-.flower-card .reveal {
-  clip-path: inset(0 100% 0 0);
-  transition: clip-path 0.7s cubic-bezier(0.65, 0, 0.35, 1);
+/* Product card — duotone hover with sliding plate */
+.flower-card { isolation: isolate; }
+.flower-card .img-wrap {
+  position: relative;
+  overflow: hidden;
 }
-.flower-card:hover .reveal { clip-path: inset(0 0 0 0); }
+.flower-card .img-wrap img {
+  transition: transform 1.6s cubic-bezier(0.22, 0.61, 0.36, 1), filter 0.9s ease;
+  filter: saturate(0.85) contrast(1.02);
+}
+.flower-card:hover .img-wrap img {
+  transform: scale(1.08);
+  filter: saturate(1.2) contrast(1.05);
+}
 
-.flower-card .img-wrap img { transition: transform 1.4s cubic-bezier(0.22, 0.61, 0.36, 1), filter 0.8s; }
-.flower-card:hover .img-wrap img { transform: scale(1.06); filter: saturate(1.1); }
+/* Moss duotone wash that retreats on hover */
+.flower-card .img-wrap::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(44, 58, 38, 0.55) 0%, rgba(26, 22, 18, 0.45) 100%);
+  mix-blend-mode: multiply;
+  transition: opacity 0.9s cubic-bezier(0.22, 0.61, 0.36, 1);
+  pointer-events: none;
+  z-index: 1;
+}
+.flower-card:hover .img-wrap::after { opacity: 0; }
+
+/* Decorative frame that draws in on hover */
+.flower-card .frame {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 2;
+}
+.flower-card .frame::before,
+.flower-card .frame::after {
+  content: '';
+  position: absolute;
+  background: var(--cream);
+  transition: transform 0.8s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+.flower-card .frame::before {
+  top: 14px; left: 14px; right: 14px; height: 1px;
+  transform: scaleX(0);
+  transform-origin: left;
+}
+.flower-card .frame::after {
+  top: 14px; left: 14px; bottom: 14px; width: 1px;
+  transform: scaleY(0);
+  transform-origin: top;
+}
+.flower-card .frame > span::before,
+.flower-card .frame > span::after {
+  content: '';
+  position: absolute;
+  background: var(--cream);
+  transition: transform 0.8s cubic-bezier(0.22, 0.61, 0.36, 1) 0.15s;
+}
+.flower-card .frame > span::before {
+  bottom: 14px; left: 14px; right: 14px; height: 1px;
+  transform: scaleX(0);
+  transform-origin: right;
+}
+.flower-card .frame > span::after {
+  top: 14px; right: 14px; bottom: 14px; width: 1px;
+  transform: scaleY(0);
+  transform-origin: bottom;
+}
+.flower-card:hover .frame::before { transform: scaleX(1); }
+.flower-card:hover .frame::after { transform: scaleY(1); }
+.flower-card:hover .frame > span::before { transform: scaleX(1); }
+.flower-card:hover .frame > span::after { transform: scaleY(1); }
+
+/* Caption plate that slides up on hover */
+.flower-card .plate {
+  position: absolute;
+  left: 18px; right: 18px; bottom: 18px;
+  z-index: 3;
+  transform: translateY(calc(100% + 18px));
+  transition: transform 0.7s cubic-bezier(0.22, 0.61, 0.36, 1);
+  background: var(--cream);
+  color: var(--ink);
+  padding: 14px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.flower-card:hover .plate { transform: translateY(0); }
+
+/* Title underline grows on hover */
+.flower-card .title-link {
+  background-image: linear-gradient(currentColor, currentColor);
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  background-size: 0% 1px;
+  transition: background-size 0.7s cubic-bezier(0.22, 0.61, 0.36, 1), color 0.4s;
+  padding-bottom: 2px;
+}
+.flower-card:hover .title-link { background-size: 100% 1px; }
 
 /* Marquee */
 .marquee-track {
@@ -139,11 +232,132 @@ html, body {
 }
 .btn-press:active { transform: translateY(1px); }
 
-/* Reveal on scroll initial */
+/* Reveal on scroll initial (page-load) */
 .reveal-up { animation: fadeUp 1s cubic-bezier(0.22, 0.61, 0.36, 1) both; }
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(24px); }
   to { opacity: 1; transform: translateY(0); }
+}
+
+/* ──────────────────────────────────────────────
+   SCROLL-DRIVEN ANIMATIONS
+   Native (Chrome/Edge) via animation-timeline: view().
+   IntersectionObserver fallback toggles .is-visible.
+   ────────────────────────────────────────────── */
+
+@keyframes scroll-rise {
+  from { opacity: 0; transform: translateY(60px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes scroll-rise-soft {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes scroll-mask-in {
+  from { clip-path: inset(0 100% 0 0); }
+  to   { clip-path: inset(0 0 0 0); }
+}
+@keyframes scroll-zoom-out {
+  from { transform: scale(1.18); }
+  to   { transform: scale(1); }
+}
+@keyframes scroll-drift-x {
+  from { transform: translateX(40px); opacity: 0; }
+  to   { transform: translateX(0); opacity: 1; }
+}
+@keyframes scroll-drift-x-neg {
+  from { transform: translateX(-40px); opacity: 0; }
+  to   { transform: translateX(0); opacity: 1; }
+}
+@keyframes scroll-parallax-y {
+  from { transform: translateY(-12%); }
+  to   { transform: translateY(12%); }
+}
+@keyframes scroll-marquee-x {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-15%); }
+}
+@keyframes scroll-progress {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
+}
+@keyframes scroll-rotate {
+  from { transform: rotate(-8deg); }
+  to   { transform: rotate(8deg); }
+}
+
+/* Defaults: hidden until visible (IntersectionObserver) */
+.sd-rise,
+.sd-rise-soft,
+.sd-mask,
+.sd-drift,
+.sd-drift-left {
+  opacity: 0;
+}
+.sd-rise.is-visible       { animation: scroll-rise        1.1s cubic-bezier(0.22,0.61,0.36,1) both; }
+.sd-rise-soft.is-visible  { animation: scroll-rise-soft   0.9s cubic-bezier(0.22,0.61,0.36,1) both; }
+.sd-mask.is-visible       { animation: scroll-mask-in     1.2s cubic-bezier(0.65,0,0.35,1) both; opacity: 1; }
+.sd-drift.is-visible      { animation: scroll-drift-x     1.1s cubic-bezier(0.22,0.61,0.36,1) both; }
+.sd-drift-left.is-visible { animation: scroll-drift-x-neg 1.1s cubic-bezier(0.22,0.61,0.36,1) both; }
+
+/* Native scroll-driven (progressive enhancement). When supported,
+   the animation re-couples to the view timeline and ignores the
+   IO toggle entirely. */
+@supports (animation-timeline: view()) {
+  .sd-rise, .sd-rise-soft, .sd-mask, .sd-drift, .sd-drift-left {
+    opacity: 0;
+    animation-timeline: view();
+    animation-range: entry 0% entry 80%;
+    animation-fill-mode: both;
+  }
+  .sd-rise       { animation-name: scroll-rise; }
+  .sd-rise-soft  { animation-name: scroll-rise-soft; }
+  .sd-mask       { animation-name: scroll-mask-in; opacity: 1; }
+  .sd-drift      { animation-name: scroll-drift-x; }
+  .sd-drift-left { animation-name: scroll-drift-x-neg; }
+
+  /* Continuous (cover) effects — driven the whole time element is in view */
+  .sd-parallax {
+    animation: scroll-parallax-y linear both;
+    animation-timeline: view();
+    animation-range: cover 0% cover 100%;
+    will-change: transform;
+  }
+  .sd-zoom {
+    animation: scroll-zoom-out linear both;
+    animation-timeline: view();
+    animation-range: cover 0% cover 60%;
+    will-change: transform;
+  }
+  .sd-marquee-scroll {
+    animation: scroll-marquee-x linear both;
+    animation-timeline: view();
+    animation-range: cover 0% cover 100%;
+  }
+  .sd-rotate {
+    animation: scroll-rotate linear both;
+    animation-timeline: view();
+    animation-range: cover 0% cover 100%;
+  }
+  /* Page progress bar — bound to root scroll */
+  .sd-progress {
+    animation: scroll-progress linear both;
+    animation-timeline: scroll(root);
+    transform-origin: 0 50%;
+  }
+}
+
+/* Stagger helper — apply with style={{animationDelay}} */
+.sd-stagger > * { animation-delay: var(--d, 0s); }
+
+@media (prefers-reduced-motion: reduce) {
+  .sd-rise, .sd-rise-soft, .sd-mask, .sd-drift, .sd-drift-left,
+  .sd-parallax, .sd-zoom, .sd-marquee-scroll, .sd-rotate, .sd-progress {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+    clip-path: none !important;
+  }
 }
 
 /* Wave underline svg */

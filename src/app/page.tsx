@@ -86,15 +86,15 @@ export default function HomePage() {
                 </div>
               </div>
               <div className="lg:col-span-9">
-                <h2 className="display font-light leading-[0.95] tracking-[-0.02em] text-ink text-4xl md:text-6xl lg:text-[5rem]">
+                <h2 className="sd-rise display font-light leading-[0.95] tracking-[-0.02em] text-ink text-4xl md:text-6xl lg:text-[5rem]">
                   Flowers, gathered with <span className="italiana italic text-moss">patience</span> &mdash;
                   bouquets composed the way a painter composes a still <span className="italiana italic text-oxblood">life</span>.
                 </h2>
                 <div className="mt-12 grid md:grid-cols-2 gap-10">
-                  <p className="serif text-lg md:text-xl text-ink/80 leading-relaxed dropcap">
+                  <p className="sd-rise-soft serif text-lg md:text-xl text-ink/80 leading-relaxed dropcap" style={{ animationDelay: '0.15s' }}>
                     For over a decade, Chey Florist has tended a small storefront on Forest Avenue. Each morning we open boxes from the market, sort stems by color and posture, and begin again. Nothing here is wired or stamped from a catalogue — every bouquet is conducted by hand, in our studio, on the same day it leaves us.
                   </p>
-                  <p className="serif text-lg md:text-xl text-ink/80 leading-relaxed">
+                  <p className="sd-rise-soft serif text-lg md:text-xl text-ink/80 leading-relaxed" style={{ animationDelay: '0.3s' }}>
                     We arrange for birthdays and quiet mornings, for new mothers and old friends, for funerals and first dates. We will deliver to a hospital, an office, a stoop in Stapleton, a chapel in West Brighton — the same afternoon, by our own hand. Tell us the colors you love and the person you'd like to move; we will compose the rest.
                   </p>
                 </div>
@@ -129,8 +129,8 @@ export default function HomePage() {
                   title: 'Delivered the Same Afternoon',
                   body: 'Orders placed before 1pm are hand-delivered across Staten Island that same day. We knock; we wait until someone smiles.',
                 },
-              ].map((p) => (
-                <div key={p.n} className="bg-cream p-10 md:p-12 group hover:bg-bone transition-colors duration-700">
+              ].map((p, i) => (
+                <div key={p.n} style={{ animationDelay: `${i * 0.15}s` }} className="sd-rise bg-cream p-10 md:p-12 group hover:bg-bone transition-colors duration-700">
                   <div className="flex items-baseline gap-4 mb-8">
                     <span className="display italic text-6xl text-moss">{p.n}</span>
                     <span className="h-px flex-1 bg-ink/30" />
@@ -153,7 +153,7 @@ export default function HomePage() {
                   <div className="eyebrow text-gold mb-5 flex items-center gap-3">
                     <span>№ 02</span><span className="w-10 h-px bg-ink/40" /><span>From the Studio</span>
                   </div>
-                  <h2 className="display text-5xl md:text-7xl font-light leading-[0.95] tracking-[-0.02em]">
+                  <h2 className="sd-rise display text-5xl md:text-7xl font-light leading-[0.95] tracking-[-0.02em]">
                     This week's <span className="italiana italic text-moss">compositions</span>
                   </h2>
                 </div>
@@ -166,7 +166,8 @@ export default function HomePage() {
                 {products.slice(0, 8).map((product, i) => (
                   <div
                     key={product.slug}
-                    className={i % 4 === 1 || i % 4 === 2 ? 'lg:translate-y-12' : ''}
+                    style={{ animationDelay: `${(i % 4) * 0.12}s` }}
+                    className={`sd-rise ${i % 4 === 1 || i % 4 === 2 ? 'lg:translate-y-12' : ''}`}
                   >
                     <ProductCard
                       name={product.name}
@@ -193,7 +194,7 @@ export default function HomePage() {
                 <div className="eyebrow text-blush mb-5 flex items-center gap-3">
                   <span>№ 03</span><span className="w-10 h-px bg-cream/40" /><span>By Occasion</span>
                 </div>
-                <h2 className="display text-5xl md:text-7xl font-light leading-[0.95] tracking-[-0.02em]">
+                <h2 className="sd-rise display text-5xl md:text-7xl font-light leading-[0.95] tracking-[-0.02em]">
                   For every <span className="italiana italic text-blush">tender</span> moment.
                 </h2>
               </div>
@@ -203,14 +204,21 @@ export default function HomePage() {
             </div>
 
             <div className="grid grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-7">
-              {occasions.map((c) => (
-                <Link key={c.slug} href={`/collections/${c.slug}`} className="group block relative aspect-[3/4] overflow-hidden">
-                  <Image
-                    src={c.img}
-                    alt={c.name}
-                    fill
-                    className="object-cover opacity-85 group-hover:opacity-100 group-hover:scale-105 transition-all duration-[1200ms]"
-                  />
+              {occasions.map((c, i) => (
+                <Link
+                  key={c.slug}
+                  href={`/collections/${c.slug}`}
+                  style={{ animationDelay: `${(i % 3) * 0.12}s` }}
+                  className={`sd-rise group block relative aspect-[3/4] overflow-hidden ${i % 2 === 1 ? 'lg:translate-y-10' : ''}`}
+                >
+                  <div className="absolute inset-0 sd-parallax">
+                    <Image
+                      src={c.img}
+                      alt={c.name}
+                      fill
+                      className="object-cover opacity-85 group-hover:opacity-100 group-hover:scale-105 transition-all duration-[1200ms]"
+                    />
+                  </div>
                   <div className="absolute inset-0 bg-gradient-to-t from-moss/95 via-moss/30 to-transparent" />
                   <div className="absolute top-5 left-5 right-5 flex items-center justify-between eyebrow text-cream/90">
                     <span>{c.n}</span>
@@ -234,7 +242,7 @@ export default function HomePage() {
         <section className="py-32 md:py-44">
           <div className="max-w-5xl mx-auto px-6 lg:px-10 text-center">
             <div className="eyebrow text-gold mb-8">№ 04 — A Note Received</div>
-            <p className="display font-light text-4xl md:text-6xl leading-[1.05] tracking-[-0.01em] text-ink">
+            <p className="sd-rise display font-light text-4xl md:text-6xl leading-[1.05] tracking-[-0.01em] text-ink">
               &ldquo;The arrangement <span className="italiana italic text-moss">arrived</span> right as the service began.
               Three people cried; one asked who made them. <span className="italiana italic text-oxblood">Cheyenne</span>, you composed a goodbye.&rdquo;
             </p>
@@ -247,19 +255,19 @@ export default function HomePage() {
         <section className="relative pb-28">
           <div className="max-w-[1400px] mx-auto px-6 lg:px-10">
             <div className="relative bg-ink text-cream overflow-hidden rounded-[2px]">
-              <div className="absolute inset-0 opacity-30">
+              <div className="absolute inset-0 opacity-30 sd-parallax">
                 <Image
                   src="/media/category-banner-love-and-romance-3661532b6f.webp"
                   alt=""
                   fill
-                  className="object-cover"
+                  className="object-cover scale-110"
                 />
               </div>
               <div className="absolute inset-0 bg-gradient-to-r from-ink via-ink/80 to-ink/30" />
               <div className="relative grid lg:grid-cols-12 gap-10 p-10 md:p-20">
                 <div className="lg:col-span-8">
                   <div className="eyebrow text-gold mb-6">Order Today</div>
-                  <h2 className="display text-5xl md:text-7xl lg:text-8xl font-light leading-[0.95] tracking-[-0.02em]">
+                  <h2 className="sd-rise display text-5xl md:text-7xl lg:text-8xl font-light leading-[0.95] tracking-[-0.02em]">
                     Send <span className="italiana italic text-blush">flowers</span> that<br />
                     arrive while it still <span className="italiana italic text-blush">matters</span>.
                   </h2>

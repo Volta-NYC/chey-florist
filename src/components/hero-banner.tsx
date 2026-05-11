@@ -82,13 +82,15 @@ export function HeroBanner({ title, subtitle, imagePath, ctaText, ctaLink }: Her
 
             <div className="relative aspect-[4/5] overflow-hidden">
               {imagePath && (
-                <Image
-                  src={imagePath}
-                  alt={title}
-                  fill
-                  priority
-                  className="object-cover"
-                />
+                <div className="absolute inset-0 sd-zoom">
+                  <Image
+                    src={imagePath}
+                    alt={title}
+                    fill
+                    priority
+                    className="object-cover"
+                  />
+                </div>
               )}
               <div className="absolute inset-0 bg-gradient-to-t from-ink/20 via-transparent to-transparent" />
               {/* Vertical caption */}
@@ -115,7 +117,7 @@ export function HeroBanner({ title, subtitle, imagePath, ctaText, ctaLink }: Her
 
       {/* Bottom marquee with type */}
       <div className="border-y border-ink/15 overflow-hidden bg-bone/40">
-        <div className="marquee-track py-4">
+        <div className="marquee-track sd-marquee-scroll py-4">
           {Array.from({ length: 6 }).map((_, i) => (
             <span key={i} className="display italic text-moss text-3xl md:text-5xl px-8 whitespace-nowrap">
               roses · peonies · ranunculus · anemone · garden dahlia · sweet pea · lisianthus · eucalyptus ·

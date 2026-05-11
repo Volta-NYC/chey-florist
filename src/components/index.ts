@@ -5,4 +5,5 @@ export { CollectionCard } from './collection-card';
 export { HeroBanner } from './hero-banner';
 export { Section } from './section';
 export { AnnouncementBar } from './announcement-bar';
+export { ScrollReveal } from './scroll-reveal';
 export { CartProvider } from './cart-provider';
