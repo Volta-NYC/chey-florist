@@ -37,7 +37,7 @@ export default function FAQPage() {
       <AnnouncementBar />
       <Header />
       
-      <Section className="pt-24 pb-12">
+      <Section title="" className="pt-24 pb-12">
         <div className="max-w-3xl mx-auto text-center">
           <h1 className="text-4xl md:text-5xl font-serif mb-6">Frequently Asked Questions</h1>
           <p className="text-gray-600 text-lg">
@@ -46,7 +46,7 @@ export default function FAQPage() {
         </div>
       </Section>
 
-      <Section className="pb-24">
+      <Section title="" className="pb-24">
         <div className="max-w-3xl mx-auto border-t border-gray-200">
           {faqs.map((faq, index) => (
             <div key={index} className="border-b border-gray-200 py-6">

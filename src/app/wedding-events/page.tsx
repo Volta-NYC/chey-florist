@@ -12,7 +12,7 @@ export default function WeddingEventsPage() {
       <AnnouncementBar />
       <Header />
       
-      <Section className="pt-24 pb-12">
+      <Section title="" className="pt-24 pb-12">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-4xl md:text-5xl font-serif mb-6">Weddings & Events</h1>
           <p className="text-gray-600 text-lg mb-12">
@@ -21,7 +21,7 @@ export default function WeddingEventsPage() {
         </div>
       </Section>
 
-      <Section className="pb-24">
+      <Section title="" className="pb-24">
         <div className="max-w-6xl mx-auto space-y-24">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
             <div className="order-2 md:order-1">

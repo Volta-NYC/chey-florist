@@ -61,7 +61,7 @@ export default function HomePage() {
       <main className="flex-1">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* About Section */}
-          <Section
+          <Section title=""
             title="Premium Floral Design in Staten Island"
             subtitle="For over a decade, Chey Florist has been crafting beautiful arrangements for every special moment"
           >

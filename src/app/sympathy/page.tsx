@@ -19,7 +19,7 @@ export default function SympathyPage() {
       <AnnouncementBar />
       <Header />
       
-      <Section className="pt-24 pb-12">
+      <Section title="" className="pt-24 pb-12">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-4xl md:text-5xl font-serif mb-6">Sympathy & Funeral Flowers</h1>
           <p className="text-gray-600 text-lg mb-12">
@@ -28,7 +28,7 @@ export default function SympathyPage() {
         </div>
       </Section>
 
-      <Section className="pb-24">
+      <Section title="" className="pb-24">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {products.map((product) => (
             <ProductCard 
@@ -42,7 +42,7 @@ export default function SympathyPage() {
         </div>
       </Section>
 
-      <Section className="bg-stone-50 py-24">
+      <Section title="" className="bg-stone-50 py-24">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl font-serif mb-6">Custom Tributes</h2>
           <p className="text-gray-600 mb-8 leading-relaxed">
