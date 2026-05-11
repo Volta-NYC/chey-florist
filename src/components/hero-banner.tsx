@@ -64,22 +64,6 @@ export function HeroBanner({ title, subtitle, imagePath, ctaText, ctaLink }: Her
 
           {/* Image column */}
           <div className="lg:col-span-5 relative">
-            <div className="absolute -top-10 -left-6 hidden lg:block">
-              <div className="w-28 h-28 rounded-full border border-ink/40 flex items-center justify-center animate-slow-spin">
-                <svg viewBox="0 0 100 100" className="w-full h-full absolute inset-0">
-                  <defs>
-                    <path id="circle" d="M50,50 m-38,0 a38,38 0 1,1 76,0 a38,38 0 1,1 -76,0" />
-                  </defs>
-                  <text className="eyebrow fill-ink" style={{ fontSize: '9px', letterSpacing: '0.32em' }}>
-                    <textPath href="#circle">
-                      FRESH · SEASONAL · HAND-TIED · STATEN ISLAND ·
-                    </textPath>
-                  </text>
-                </svg>
-                <span className="display italic text-moss text-xl">✿</span>
-              </div>
-            </div>
-
             <div className="relative aspect-[4/5] overflow-hidden">
               {imagePath && (
                 <div className="absolute inset-0 sd-zoom">
@@ -92,15 +76,32 @@ export function HeroBanner({ title, subtitle, imagePath, ctaText, ctaLink }: Her
                   />
                 </div>
               )}
-              <div className="absolute inset-0 bg-gradient-to-t from-ink/20 via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-ink/30 via-transparent to-transparent" />
               {/* Vertical caption */}
-              <div className="absolute right-3 top-6 origin-top-right rotate-90 translate-x-full eyebrow text-cream/90">
+              <div className="absolute right-3 top-6 origin-top-right rotate-90 translate-x-full eyebrow text-cream/95 drop-shadow-[0_1px_2px_rgba(0,0,0,0.5)]">
                 Plate I — Garden Roses, Anemone, Eucalyptus
               </div>
             </div>
 
-            {/* Index card */}
-            <div className="absolute -bottom-10 -left-6 lg:-left-12 bg-cream border border-ink/15 px-6 py-5 max-w-[220px] shadow-[0_30px_60px_-30px_rgba(26,22,18,0.4)]">
+            {/* Wax-seal wheel — bottom-left, marginalia */}
+            <div className="absolute -bottom-14 -left-10 hidden lg:block z-20">
+              <div className="relative w-32 h-32 rounded-full bg-cream border border-ink/40 flex items-center justify-center shadow-[0_20px_40px_-20px_rgba(26,22,18,0.5)]">
+                <svg viewBox="0 0 100 100" className="absolute inset-0 w-full h-full animate-slow-spin">
+                  <defs>
+                    <path id="seal-circle" d="M50,50 m-38,0 a38,38 0 1,1 76,0 a38,38 0 1,1 -76,0" />
+                  </defs>
+                  <text className="eyebrow fill-ink" style={{ fontSize: '8.5px', letterSpacing: '0.32em' }}>
+                    <textPath href="#seal-circle">
+                      FRESH · SEASONAL · HAND-TIED · STATEN ISLAND ·
+                    </textPath>
+                  </text>
+                </svg>
+                <span className="display italic text-moss text-2xl leading-none">✿</span>
+              </div>
+            </div>
+
+            {/* Index card — moved to right so it doesn't collide with seal */}
+            <div className="absolute -bottom-10 -right-4 lg:-right-10 bg-cream border border-ink/15 px-6 py-5 max-w-[220px] shadow-[0_30px_60px_-30px_rgba(26,22,18,0.4)]">
               <div className="eyebrow text-gold mb-2">Studio Hours</div>
               <div className="serif text-ink leading-snug">
                 Mon – Sat · 10am – 7pm<br/>
@@ -117,7 +118,7 @@ export function HeroBanner({ title, subtitle, imagePath, ctaText, ctaLink }: Her
 
       {/* Bottom marquee with type */}
       <div className="border-y border-ink/15 overflow-hidden bg-bone/40">
-        <div className="marquee-track sd-marquee-scroll py-4">
+        <div className="marquee-track py-4">
           {Array.from({ length: 6 }).map((_, i) => (
             <span key={i} className="display italic text-moss text-3xl md:text-5xl px-8 whitespace-nowrap">
               roses · peonies · ranunculus · anemone · garden dahlia · sweet pea · lisianthus · eucalyptus ·

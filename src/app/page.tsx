@@ -59,7 +59,7 @@ export default function HomePage() {
 
       <HeroBanner
         title="Le Jardin Privé"
-        imagePath="/media/43475100-chey-florist-18a0d1d1f5.webp"
+        imagePath="/media/party-1-f39d7f8bb6.webp"
         ctaText="Enter the Atelier"
         ctaLink="/collections/all"
       />
