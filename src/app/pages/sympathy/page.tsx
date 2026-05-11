@@ -34,7 +34,7 @@ export default function SympathyPage() {
   }, []);
 
   return (
-    <div className="min-h-screen flex flex-col bg-white">
+    <div className="min-h-screen flex flex-col bg-transparent">
       <AnnouncementBar />
       <Header />
 
@@ -64,13 +64,13 @@ export default function SympathyPage() {
           <div className="grid md:grid-cols-2 gap-12 mb-16">
             <div>
               <h2 className="text-3xl font-light mb-6">Expressing Sympathy</h2>
-              <p className="text-gray-700 leading-relaxed mb-4">
+              <p className="text-ink/80 leading-relaxed mb-4">
                 During times of loss, flowers provide comfort and express care. When you order funeral flowers from Chey Florist, our skilled and compassionate florist will work directly with the funeral home to ensure that your delivery is timely and accurate.
               </p>
-              <p className="text-gray-700 leading-relaxed mb-4">
+              <p className="text-ink/80 leading-relaxed mb-4">
                 We offer same-day delivery for sympathy arrangements. Please call (929) 216-7775 for assistance.
               </p>
-              <p className="text-gray-700 leading-relaxed">
+              <p className="text-ink/80 leading-relaxed">
                 Funeral flowers are sent to a church service or funeral home to honor the departed's religious or cultural beliefs with appropriate arrangements for a viewing, wake, funeral, cremation, or graveside service.
               </p>
             </div>
@@ -89,19 +89,19 @@ export default function SympathyPage() {
             <div className="grid md:grid-cols-3 gap-8">
               <div className="text-center">
                 <h3 className="text-lg font-light mb-3">Casket Sprays</h3>
-                <p className="text-gray-600">
+                <p className="text-ink/70">
                   Elegant arrangements placed on top of the casket during services
                 </p>
               </div>
               <div className="text-center">
                 <h3 className="text-lg font-light mb-3">Wreaths & Tributes</h3>
-                <p className="text-gray-600">
+                <p className="text-ink/70">
                   Beautiful standing wreaths for display at services
                 </p>
               </div>
               <div className="text-center">
                 <h3 className="text-lg font-light mb-3">Sympathy Bouquets</h3>
-                <p className="text-gray-600">
+                <p className="text-ink/70">
                   Delivered to the family's home for ongoing comfort
                 </p>
               </div>
@@ -126,7 +126,7 @@ export default function SympathyPage() {
               <div className="text-center mt-12">
                 <Link
                   href="/collections/sympathy"
-                  className="inline-block px-8 py-3 border border-gray-900 text-gray-900 rounded-lg hover:bg-gray-50 transition"
+                  className="inline-block px-8 py-3 border border-gray-900 text-ink rounded-lg hover:bg-bone/60 transition"
                 >
                   View All Sympathy Arrangements
                 </Link>
@@ -136,23 +136,23 @@ export default function SympathyPage() {
 
           {/* Hospital & Funeral Home Info */}
           <div className="grid md:grid-cols-2 gap-8 my-16">
-            <div className="bg-gray-50 rounded-2xl p-8">
+            <div className="bg-bone/60 rounded-2xl p-8">
               <h3 className="text-xl font-light mb-4">Hospital Delivery</h3>
-              <p className="text-sm text-gray-600 mb-4">
+              <p className="text-sm text-ink/70 mb-4">
                 We deliver to the following hospitals:
               </p>
-              <ul className="space-y-2 text-sm text-gray-700">
+              <ul className="space-y-2 text-sm text-ink/80">
                 <li>• Richmond University Medical Center</li>
                 <li>• Bayley Seton Hospital</li>
                 <li>• Richmond Center for Rehab and Specialty Healthcare</li>
               </ul>
             </div>
-            <div className="bg-gray-50 rounded-2xl p-8">
+            <div className="bg-bone/60 rounded-2xl p-8">
               <h3 className="text-xl font-light mb-4">Funeral Home Delivery</h3>
-              <p className="text-sm text-gray-600 mb-4">
+              <p className="text-sm text-ink/70 mb-4">
                 We deliver to the following funeral homes:
               </p>
-              <ul className="space-y-2 text-sm text-gray-700">
+              <ul className="space-y-2 text-sm text-ink/80">
                 <li>• John Vincent Scalia Home for Funerals</li>
                 <li>• Casey McCallum Rice South Shore Funeral Home</li>
               </ul>
@@ -160,16 +160,16 @@ export default function SympathyPage() {
           </div>
 
           {/* CTA */}
-          <div className="bg-rose-50 rounded-2xl px-8 md:px-12 py-12 text-center mb-16">
+          <div className="bg-bone rounded-2xl px-8 md:px-12 py-12 text-center mb-16">
             <h3 className="text-2xl font-light mb-4">
               Let Us Help Honor Your Loved One
             </h3>
-            <p className="text-gray-700 mb-6 max-w-2xl mx-auto">
+            <p className="text-ink/80 mb-6 max-w-2xl mx-auto">
               Our compassionate florists are here to help you create the perfect arrangement. Same-day delivery available.
             </p>
             <a
               href="tel:(929) 216-7775"
-              className="inline-block px-8 py-3 bg-rose-600 text-white font-medium rounded-lg hover:bg-rose-700 transition"
+              className="inline-block px-8 py-3 bg-oxblood text-white font-medium rounded-lg hover:bg-ink transition"
             >
               Call (929) 216-7775
             </a>

@@ -59,12 +59,12 @@ export default function ProductPage() {
 
   if (loading) {
     return (
-      <div className="min-h-screen flex flex-col bg-white">
+      <div className="min-h-screen flex flex-col bg-transparent">
         <AnnouncementBar />
         <Header />
         <main className="flex-1 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
           <div className="text-center">
-            <p className="text-gray-600">Loading...</p>
+            <p className="text-ink/70">Loading...</p>
           </div>
         </main>
         <Footer />
@@ -79,29 +79,29 @@ export default function ProductPage() {
   const currentVariant = product.variants?.[selectedVariant];
 
   return (
-    <div className="min-h-screen flex flex-col bg-white">
+    <div className="min-h-screen flex flex-col bg-transparent">
       <AnnouncementBar />
       <Header />
 
       <main className="flex-1">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           {/* Breadcrumb */}
-          <div className="mb-8 flex items-center gap-2 text-sm text-gray-600">
-            <Link href="/collections/all" className="hover:text-gray-900">
+          <div className="mb-8 flex items-center gap-2 text-sm text-ink/70">
+            <Link href="/collections/all" className="hover:text-ink">
               Shop
             </Link>
             <span>/</span>
-            <Link href={`/collections/${product.category}`} className="hover:text-gray-900">
+            <Link href={`/collections/${product.category}`} className="hover:text-ink">
               {product.category}
             </Link>
             <span>/</span>
-            <span className="text-gray-900">{product.name}</span>
+            <span className="text-ink">{product.name}</span>
           </div>
 
           <div className="grid md:grid-cols-2 gap-12">
             {/* Images */}
             <div className="space-y-4">
-              <div className="relative aspect-square overflow-hidden rounded-2xl bg-gray-100">
+              <div className="relative aspect-square overflow-hidden rounded-2xl bg-bone">
                 {product.imagePaths[selectedImage] && (
                   <Image
                     src={product.imagePaths[selectedImage]}
@@ -137,7 +137,7 @@ export default function ProductPage() {
             {/* Details */}
             <div className="space-y-8">
               <div>
-                <p className="text-sm text-gray-500 uppercase tracking-widest mb-2">
+                <p className="text-sm text-ink/50 uppercase tracking-widest mb-2">
                   {product.category}
                 </p>
                 <h1 className="text-3xl md:text-4xl font-light mb-4">
@@ -148,17 +148,17 @@ export default function ProductPage() {
                 <div className="mb-6">
                   {currentVariant ? (
                     <div>
-                      <p className="text-3xl font-semibold text-gray-900">
+                      <p className="text-3xl font-semibold text-ink">
                         ${currentVariant.price.toFixed(2)}
                       </p>
                       {product.compareAtPrice && product.compareAtPrice > currentVariant.price && (
-                        <p className="text-lg text-gray-500 line-through">
+                        <p className="text-lg text-ink/50 line-through">
                           ${product.compareAtPrice.toFixed(2)}
                         </p>
                       )}
                     </div>
                   ) : (
-                    <p className="text-3xl font-semibold text-gray-900">
+                    <p className="text-3xl font-semibold text-ink">
                       ${product.price.toFixed(2)}
                     </p>
                   )}
@@ -181,7 +181,7 @@ export default function ProductPage() {
               {/* Variants */}
               {product.variants && product.variants.length > 1 && (
                 <div>
-                  <label className="block text-sm font-medium text-gray-900 mb-3">
+                  <label className="block text-sm font-medium text-ink mb-3">
                     Size
                   </label>
                   <div className="space-y-2">
@@ -191,13 +191,13 @@ export default function ProductPage() {
                         onClick={() => setSelectedVariant(idx)}
                         className={`w-full px-4 py-3 text-left rounded-lg border-2 transition ${
                           selectedVariant === idx
-                            ? 'border-rose-600 bg-rose-50'
-                            : 'border-gray-200 hover:border-gray-300'
+                            ? 'border-rose-600 bg-bone'
+                            : 'border-ink/15 hover:border-ink/25'
                         }`}
                       >
                         <div className="flex justify-between items-center">
                           <span className="font-medium">{variant.name}</span>
-                          <span className="text-gray-600">${variant.price.toFixed(2)}</span>
+                          <span className="text-ink/70">${variant.price.toFixed(2)}</span>
                         </div>
                       </button>
                     ))}
@@ -209,42 +209,42 @@ export default function ProductPage() {
               <div className="space-y-3 pt-6">
                 <button
                   disabled={product.availability !== 'available'}
-                  className="w-full px-6 py-4 bg-rose-600 text-white font-medium rounded-lg hover:bg-rose-700 transition disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="w-full px-6 py-4 bg-oxblood text-white font-medium rounded-lg hover:bg-ink transition disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   {product.availability === 'available' ? 'Add to Cart' : 'Out of Stock'}
                 </button>
                 <a
                   href="tel:(929) 216-7775"
-                  className="block text-center px-6 py-4 border-2 border-gray-900 text-gray-900 font-medium rounded-lg hover:bg-gray-50 transition"
+                  className="block text-center px-6 py-4 border-2 border-gray-900 text-ink font-medium rounded-lg hover:bg-bone/60 transition"
                 >
                   Call (929) 216-7775
                 </a>
               </div>
 
               {/* Description */}
-              <div className="pt-6 border-t border-gray-200">
+              <div className="pt-6 border-t border-ink/15">
                 <h3 className="text-lg font-light mb-4">About This Arrangement</h3>
-                <p className="text-gray-700 leading-relaxed">
+                <p className="text-ink/80 leading-relaxed">
                   {product.fullDescription}
                 </p>
               </div>
 
               {/* Features */}
-              <div className="grid grid-cols-2 gap-4 pt-6 border-t border-gray-200">
+              <div className="grid grid-cols-2 gap-4 pt-6 border-t border-ink/15">
                 <div>
-                  <p className="text-sm text-gray-600 mb-1">Same-Day Delivery</p>
+                  <p className="text-sm text-ink/70 mb-1">Same-Day Delivery</p>
                   <p className="font-medium">Available</p>
                 </div>
                 <div>
-                  <p className="text-sm text-gray-600 mb-1">Local Delivery Area</p>
+                  <p className="text-sm text-ink/70 mb-1">Local Delivery Area</p>
                   <p className="font-medium">Staten Island, NY</p>
                 </div>
                 <div>
-                  <p className="text-sm text-gray-600 mb-1">Order Before</p>
+                  <p className="text-sm text-ink/70 mb-1">Order Before</p>
                   <p className="font-medium">1:00 PM</p>
                 </div>
                 <div>
-                  <p className="text-sm text-gray-600 mb-1">Delivery Fee</p>
+                  <p className="text-sm text-ink/70 mb-1">Delivery Fee</p>
                   <p className="font-medium">$15.00</p>
                 </div>
               </div>

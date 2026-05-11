@@ -45,8 +45,8 @@ export function Footer() {
               <li><Link href="/collections/all" className="link-edit">All compositions</Link></li>
               <li><Link href="/collections/birthday" className="link-edit">Birthday</Link></li>
               <li><Link href="/collections/anniversary" className="link-edit">Anniversary</Link></li>
-              <li><Link href="/collections/sympathy" className="link-edit">Sympathy</Link></li>
-              <li><Link href="/collections/wedding-events" className="link-edit">Weddings & events</Link></li>
+              <li><Link href="/sympathy" className="link-edit">Sympathy</Link></li>
+              <li><Link href="/wedding-events" className="link-edit">Weddings & events</Link></li>
             </ul>
           </div>
           <div>

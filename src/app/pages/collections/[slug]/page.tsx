@@ -54,12 +54,12 @@ export default function CollectionPage() {
 
   if (loading) {
     return (
-      <div className="min-h-screen flex flex-col bg-white">
+      <div className="min-h-screen flex flex-col bg-transparent">
         <AnnouncementBar />
         <Header />
         <main className="flex-1 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
           <div className="text-center">
-            <p className="text-gray-600">Loading...</p>
+            <p className="text-ink/70">Loading...</p>
           </div>
         </main>
         <Footer />
@@ -72,7 +72,7 @@ export default function CollectionPage() {
   }
 
   return (
-    <div className="min-h-screen flex flex-col bg-white">
+    <div className="min-h-screen flex flex-col bg-transparent">
       <AnnouncementBar />
       <Header />
 
@@ -84,11 +84,11 @@ export default function CollectionPage() {
               {collection.name}
             </h1>
             {collection.description && (
-              <p className="text-lg text-gray-600 max-w-2xl">
+              <p className="text-lg text-ink/70 max-w-2xl">
                 {collection.description}
               </p>
             )}
-            <p className="text-sm text-gray-500 mt-4">
+            <p className="text-sm text-ink/50 mt-4">
               {collection.products?.length || 0} products
             </p>
           </div>
@@ -109,7 +109,7 @@ export default function CollectionPage() {
             </div>
           ) : (
             <div className="text-center py-20">
-              <p className="text-gray-600 text-lg">
+              <p className="text-ink/70 text-lg">
                 No products found in this collection.
               </p>
             </div>

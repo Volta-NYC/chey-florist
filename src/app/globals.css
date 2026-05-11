@@ -96,95 +96,76 @@ html, body {
 }
 .link-edit:hover::after { transform: scaleX(1); transform-origin: left center; }
 
-/* Product card — duotone hover with sliding plate */
+/* Product card — bright default, refined editorial hover */
 .flower-card { isolation: isolate; }
 .flower-card .img-wrap {
   position: relative;
-  overflow: hidden;
+  overflow: hidden;          /* clips the sliding plate */
+  background: var(--bone);
 }
 .flower-card .img-wrap img {
-  transition: transform 1.6s cubic-bezier(0.22, 0.61, 0.36, 1), filter 0.9s ease;
-  filter: saturate(0.85) contrast(1.02);
+  transition: transform 1.6s cubic-bezier(0.22, 0.61, 0.36, 1), filter 0.7s ease;
 }
 .flower-card:hover .img-wrap img {
-  transform: scale(1.08);
-  filter: saturate(1.2) contrast(1.05);
+  transform: scale(1.06);
+  filter: saturate(1.08) brightness(1.02);
 }
 
-/* Moss duotone wash that retreats on hover */
+/* Subtle warm tint that appears (not retreats) on hover, like turning a page */
 .flower-card .img-wrap::after {
   content: '';
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(180deg, rgba(44, 58, 38, 0.55) 0%, rgba(26, 22, 18, 0.45) 100%);
-  mix-blend-mode: multiply;
-  transition: opacity 0.9s cubic-bezier(0.22, 0.61, 0.36, 1);
+    linear-gradient(180deg, rgba(26, 22, 18, 0) 55%, rgba(26, 22, 18, 0.55) 100%);
+  opacity: 0;
+  transition: opacity 0.7s cubic-bezier(0.22, 0.61, 0.36, 1);
   pointer-events: none;
   z-index: 1;
 }
-.flower-card:hover .img-wrap::after { opacity: 0; }
+.flower-card:hover .img-wrap::after { opacity: 1; }
 
-/* Decorative frame that draws in on hover */
+/* Decorative cream corner brackets (4 L-shapes), draw in from corners */
 .flower-card .frame {
   position: absolute;
-  inset: 0;
+  inset: 14px;
   pointer-events: none;
   z-index: 2;
 }
-.flower-card .frame::before,
-.flower-card .frame::after {
-  content: '';
+.flower-card .frame > span {
   position: absolute;
-  background: var(--cream);
-  transition: transform 0.8s cubic-bezier(0.22, 0.61, 0.36, 1);
+  width: 22px;
+  height: 22px;
+  border-color: var(--cream);
+  border-style: solid;
+  border-width: 0;
+  opacity: 0;
+  transition: opacity 0.6s ease, transform 0.7s cubic-bezier(0.22, 0.61, 0.36, 1);
 }
-.flower-card .frame::before {
-  top: 14px; left: 14px; right: 14px; height: 1px;
-  transform: scaleX(0);
-  transform-origin: left;
+.flower-card .frame > span:nth-child(1) { top: 0;    left: 0;    border-top-width: 1px; border-left-width: 1px;  transform: translate(-6px, -6px); }
+.flower-card .frame > span:nth-child(2) { top: 0;    right: 0;   border-top-width: 1px; border-right-width: 1px; transform: translate(6px, -6px); }
+.flower-card .frame > span:nth-child(3) { bottom: 0; left: 0;    border-bottom-width: 1px; border-left-width: 1px;  transform: translate(-6px, 6px); }
+.flower-card .frame > span:nth-child(4) { bottom: 0; right: 0;   border-bottom-width: 1px; border-right-width: 1px; transform: translate(6px, 6px); }
+.flower-card:hover .frame > span {
+  opacity: 1;
+  transform: translate(0, 0);
 }
-.flower-card .frame::after {
-  top: 14px; left: 14px; bottom: 14px; width: 1px;
-  transform: scaleY(0);
-  transform-origin: top;
-}
-.flower-card .frame > span::before,
-.flower-card .frame > span::after {
-  content: '';
-  position: absolute;
-  background: var(--cream);
-  transition: transform 0.8s cubic-bezier(0.22, 0.61, 0.36, 1) 0.15s;
-}
-.flower-card .frame > span::before {
-  bottom: 14px; left: 14px; right: 14px; height: 1px;
-  transform: scaleX(0);
-  transform-origin: right;
-}
-.flower-card .frame > span::after {
-  top: 14px; right: 14px; bottom: 14px; width: 1px;
-  transform: scaleY(0);
-  transform-origin: bottom;
-}
-.flower-card:hover .frame::before { transform: scaleX(1); }
-.flower-card:hover .frame::after { transform: scaleY(1); }
-.flower-card:hover .frame > span::before { transform: scaleX(1); }
-.flower-card:hover .frame > span::after { transform: scaleY(1); }
 
-/* Caption plate that slides up on hover */
+/* Caption plate slides up from the bottom of the IMAGE (clipped by img-wrap) */
 .flower-card .plate {
   position: absolute;
-  left: 18px; right: 18px; bottom: 18px;
+  left: 0; right: 0; bottom: 0;
   z-index: 3;
-  transform: translateY(calc(100% + 18px));
+  transform: translateY(100%);
   transition: transform 0.7s cubic-bezier(0.22, 0.61, 0.36, 1);
   background: var(--cream);
   color: var(--ink);
-  padding: 14px 16px;
+  padding: 12px 18px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 12px;
+  border-top: 1px solid rgba(26, 22, 18, 0.12);
 }
 .flower-card:hover .plate { transform: translateY(0); }
 

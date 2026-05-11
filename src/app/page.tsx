@@ -43,13 +43,13 @@ export default function HomePage() {
     loadData();
   }, []);
 
-  const occasions = [
-    { name: 'Birthday', slug: 'birthday', img: '/media/category-banner-birthday-6d5899ace2.webp', n: 'I' },
-    { name: 'Anniversary', slug: 'anniversary', img: '/media/category-banner-anniversary-09371ef61a.webp', n: 'II' },
-    { name: 'Sympathy', slug: 'sympathy', img: '/media/beautiful-memories-collection-banner-ec7f6dd5b8.webp', n: 'III' },
-    { name: 'Weddings & Events', slug: 'wedding-events', img: '/media/category-banner-love-and-romance-3661532b6f.webp', n: 'IV' },
-    { name: 'Just Because', slug: 'just-because', img: '/media/category-banner-just-because-36edc515de.webp', n: 'V' },
-    { name: 'Mother\'s Day', slug: 'mothers-day', img: '/media/dod-cat-banner-mothers-day-845b64e123.webp', n: 'VI' },
+  const occasions: { name: string; href: string; img: string; n: string }[] = [
+    { name: 'Birthday', href: '/collections/birthday', img: '/media/category-banner-birthday-6d5899ace2.webp', n: 'I' },
+    { name: 'Anniversary', href: '/collections/anniversary', img: '/media/category-banner-anniversary-09371ef61a.webp', n: 'II' },
+    { name: 'Sympathy', href: '/sympathy', img: '/media/beautiful-memories-collection-banner-ec7f6dd5b8.webp', n: 'III' },
+    { name: 'Weddings & Events', href: '/wedding-events', img: '/media/category-banner-love-and-romance-3661532b6f.webp', n: 'IV' },
+    { name: 'Just Because', href: '/collections/just-because', img: '/media/category-banner-just-because-36edc515de.webp', n: 'V' },
+    { name: 'Mother\'s Day', href: '/collections/mothers-day', img: '/media/dod-cat-banner-mothers-day-845b64e123.webp', n: 'VI' },
   ];
 
   return (
@@ -206,8 +206,8 @@ export default function HomePage() {
             <div className="grid grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-7">
               {occasions.map((c, i) => (
                 <Link
-                  key={c.slug}
-                  href={`/collections/${c.slug}`}
+                  key={c.href}
+                  href={c.href}
                   style={{ animationDelay: `${(i % 3) * 0.12}s` }}
                   className={`sd-rise group block relative aspect-[3/4] overflow-hidden ${i % 2 === 1 ? 'lg:translate-y-10' : ''}`}
                 >

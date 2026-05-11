@@ -24,8 +24,8 @@ export function Header() {
           {/* Left nav */}
           <nav className="hidden md:flex items-center gap-8">
             <Link href="/collections/all" className="eyebrow link-edit text-ink/80 hover:text-ink">Atelier</Link>
-            <Link href="/collections/wedding-events" className="eyebrow link-edit text-ink/80 hover:text-ink">Weddings</Link>
-            <Link href="/collections/sympathy" className="eyebrow link-edit text-ink/80 hover:text-ink">Sympathy</Link>
+            <Link href="/wedding-events" className="eyebrow link-edit text-ink/80 hover:text-ink">Weddings</Link>
+            <Link href="/sympathy" className="eyebrow link-edit text-ink/80 hover:text-ink">Sympathy</Link>
           </nav>
 
           {/* Logo center */}
@@ -63,8 +63,8 @@ export function Header() {
           <nav className="md:hidden pb-6 pt-2 space-y-3 border-t border-ink/10">
             {[
               ['Atelier', '/collections/all'],
-              ['Weddings', '/collections/wedding-events'],
-              ['Sympathy', '/collections/sympathy'],
+              ['Weddings', '/wedding-events'],
+              ['Sympathy', '/sympathy'],
               ['Maison', '/about'],
               ['Contact', '/contact'],
             ].map(([label, href]) => (

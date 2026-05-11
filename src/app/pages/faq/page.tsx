@@ -62,7 +62,7 @@ export default function FAQPage() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-white">
+    <div className="min-h-screen flex flex-col bg-transparent">
       <AnnouncementBar />
       <Header />
 
@@ -71,7 +71,7 @@ export default function FAQPage() {
           {/* Header */}
           <div className="mb-12 text-center">
             <h1 className="text-4xl md:text-5xl font-light mb-4">Frequently Asked Questions</h1>
-            <p className="text-xl text-gray-600">
+            <p className="text-xl text-ink/70">
               Find answers to common questions about our service
             </p>
           </div>
@@ -81,15 +81,15 @@ export default function FAQPage() {
             {faqs.map((faq, index) => (
               <div
                 key={index}
-                className="border border-gray-200 rounded-lg overflow-hidden"
+                className="border border-ink/15 rounded-lg overflow-hidden"
               >
                 <button
                   onClick={() => toggleFAQ(index)}
-                  className="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50 transition"
+                  className="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-bone/60 transition"
                 >
-                  <h3 className="font-light text-lg text-gray-900">{faq.question}</h3>
+                  <h3 className="font-light text-lg text-ink">{faq.question}</h3>
                   <svg
-                    className={`w-5 h-5 text-gray-600 transition-transform ${
+                    className={`w-5 h-5 text-ink/70 transition-transform ${
                       openIndex === index ? 'transform rotate-180' : ''
                     }`}
                     fill="none"
@@ -105,8 +105,8 @@ export default function FAQPage() {
                   </svg>
                 </button>
                 {openIndex === index && (
-                  <div className="px-6 py-4 bg-gray-50 border-t border-gray-200">
-                    <p className="text-gray-700 leading-relaxed">{faq.answer}</p>
+                  <div className="px-6 py-4 bg-bone/60 border-t border-ink/15">
+                    <p className="text-ink/80 leading-relaxed">{faq.answer}</p>
                   </div>
                 )}
               </div>
@@ -114,21 +114,21 @@ export default function FAQPage() {
           </div>
 
           {/* Contact CTA */}
-          <div className="bg-gray-50 rounded-2xl px-8 md:px-12 py-12 text-center">
+          <div className="bg-bone/60 rounded-2xl px-8 md:px-12 py-12 text-center">
             <h3 className="text-2xl font-light mb-4">Didn't find your answer?</h3>
-            <p className="text-gray-600 mb-6">
+            <p className="text-ink/70 mb-6">
               Our team is happy to help. Reach out to us directly.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href="tel:(929) 216-7775"
-                className="px-8 py-3 bg-rose-600 text-white font-medium rounded-lg hover:bg-rose-700 transition"
+                className="px-8 py-3 bg-oxblood text-white font-medium rounded-lg hover:bg-ink transition"
               >
                 Call (929) 216-7775
               </a>
               <a
                 href="mailto:cheyflorist509@gmail.com"
-                className="px-8 py-3 border border-gray-900 text-gray-900 font-medium rounded-lg hover:bg-gray-50 transition"
+                className="px-8 py-3 border border-gray-900 text-ink font-medium rounded-lg hover:bg-bone/60 transition"
               >
                 Email Us
               </a>

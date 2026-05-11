@@ -33,23 +33,23 @@ export default function FAQPage() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <main className="min-h-screen bg-white">
+    <main className="min-h-screen bg-transparent">
       <AnnouncementBar />
       <Header />
       
       <Section title="" className="pt-24 pb-12">
         <div className="max-w-3xl mx-auto text-center">
           <h1 className="text-4xl md:text-5xl font-serif mb-6">Frequently Asked Questions</h1>
-          <p className="text-gray-600 text-lg">
+          <p className="text-ink/70 text-lg">
             Everything you need to know about our flowers, delivery, and services.
           </p>
         </div>
       </Section>
 
       <Section title="" className="pb-24">
-        <div className="max-w-3xl mx-auto border-t border-gray-200">
+        <div className="max-w-3xl mx-auto border-t border-ink/15">
           {faqs.map((faq, index) => (
-            <div key={index} className="border-b border-gray-200 py-6">
+            <div key={index} className="border-b border-ink/15 py-6">
               <button 
                 className="flex justify-between items-center w-full text-left focus:outline-none"
                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
@@ -58,7 +58,7 @@ export default function FAQPage() {
                 <span className="text-2xl ml-4">{openIndex === index ? '−' : '+'}</span>
               </button>
               {openIndex === index && (
-                <div className="mt-4 text-gray-600 leading-relaxed">
+                <div className="mt-4 text-ink/70 leading-relaxed">
                   {faq.answer}
                 </div>
               )}
