@@ -106,9 +106,11 @@ function parseImages(content) {
 function parseBusinessInfo(fileRecords) {
   const allText = fileRecords.map((f) => f.body).join("\n");
   const phones = unique(
-    [...allText.matchAll(/(?:\+?1[-.\s]?)?\(?\d{3}\)?[-.\s]?\d{3}[-.\s]?\d{4}/g)].map(
-      (m) => cleanText(m[0]),
-    ),
+    [
+      ...allText.matchAll(
+        /\(\d{3}\)\s*\d{3}-\d{4}|\b\d{3}-\d{3}-\d{4}\b/g,
+      ),
+    ].map((m) => cleanText(m[0])),
   );
   const emails = unique(
     [...allText.matchAll(/[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}/gi)].map((m) =>
@@ -125,11 +127,17 @@ function parseBusinessInfo(fileRecords) {
 
   const hours = {};
   for (let i = 0; i < lines.length; i += 1) {
-    if (WEEKDAYS.includes(lines[i])) {
-      const next = cleanText(lines[i + 1] || "");
-      if (next) {
-        hours[lines[i]] = next;
-      }
+    if (!WEEKDAYS.includes(lines[i])) continue;
+    let next = "";
+    for (let j = i + 1; j < Math.min(i + 10, lines.length); j += 1) {
+      const candidate = cleanText(lines[j] || "");
+      if (!candidate) continue;
+      if (WEEKDAYS.includes(lines[j])) break;
+      next = candidate;
+      break;
+    }
+    if (next) {
+      hours[lines[i]] = next;
     }
   }
 
@@ -143,7 +151,12 @@ function parseBusinessInfo(fileRecords) {
             (line) =>
               line.length > 80 &&
               !line.startsWith("[") &&
+              !line.startsWith("- [") &&
               !line.startsWith("http") &&
+              !line.includes("![](") &&
+              !line.includes("![") &&
+              !/Only three add on items/i.test(line) &&
+              !line.includes("cheyfloristsi.com/") &&
               !line.includes("Select ZIP"),
           ),
       ).slice(0, 8)
@@ -154,24 +167,40 @@ function parseBusinessInfo(fileRecords) {
     const body = homeDoc.body;
     const bannerHeading = body.match(/^#\s+(.+)$/m)?.[1];
     if (bannerHeading) {
-      promotions.push({ text: cleanText(bannerHeading), source: homeDoc.frontmatter.url });
+      promotions.push({
+        text: cleanText(bannerHeading).replace(/^!+/, ""),
+        source: homeDoc.frontmatter.url,
+      });
     }
     for (const line of body.split("\n")) {
       if (/Shop .+ Flowers/i.test(line) || /Deal of the Day/i.test(line)) {
-        const text = cleanText(line.replace(/\[|\]|\(|\)|\*|\\/g, ""));
+        const text = cleanText(
+          line
+            .replace(/\[|\]|\(|\)|\*|\\/g, "")
+            .replace(/https?:\/\/\S+/g, "")
+            .trim(),
+        );
         if (text.length > 5) {
-          promotions.push({ text, source: homeDoc.frontmatter.url });
+          promotions.push({
+            text: text.replace(/^!+/, ""),
+            source: homeDoc.frontmatter.url,
+          });
         }
       }
     }
   }
+
+  const fullAddress =
+    address && /10310/i.test(address)
+      ? address
+      : "509 Forest Ave, Staten Island, NY 10310";
 
   return {
     name: "Chey Florist",
     branding: {
       style: "premium modern floral studio",
     },
-    address,
+    address: fullAddress,
     phones,
     emails,
     hours,
@@ -311,6 +340,20 @@ function isCategoryListingUrl(urlStr) {
   return /\/cat\d+/i.test(urlStr);
 }
 
+function isEditorialLine(line) {
+  if (line.length < 40) return false;
+  if (line.startsWith("[") || line.startsWith("![") || line.includes("![](")) return false;
+  if (/^\-\s*\[/.test(line)) return false;
+  if (/cheyfloristsi\.com/.test(line)) return false;
+  if (/Only three add on items/i.test(line)) return false;
+  if (/^\$[0-9]/.test(line) && line.includes("Buy Now")) return false;
+  if (line.includes("Compare Your Favorites")) return false;
+  if (line.includes("Select ZIP")) return false;
+  if (/^##?\s/.test(line) && line.length < 140) return false;
+  if (/Where will we be delivering/i.test(line)) return false;
+  return true;
+}
+
 function parsePages(fileRecords) {
   const pageRecords = [];
   for (const record of fileRecords) {
@@ -331,16 +374,8 @@ function parsePages(fileRecords) {
       record.body
         .split("\n")
         .map((line) => cleanText(line))
-        .filter(
-          (line) =>
-            line.length > 60 &&
-            !line.startsWith("[") &&
-            !line.startsWith("http") &&
-            !line.includes("cheyfloristsi.comhttps") &&
-            !line.includes("Compare Your Favorites") &&
-            !line.includes("Select ZIP"),
-        ),
-    ).slice(0, 10);
+        .filter((line) => isEditorialLine(line)),
+    ).slice(0, 12);
     pageRecords.push({
       title: cleanText(heading),
       slug: slugify(new URL(url).pathname.replace(/\//g, "-") || "home"),
@@ -594,14 +629,8 @@ async function main() {
       homeDoc.body
         .split("\n")
         .map((line) => cleanText(line))
-        .filter(
-          (line) =>
-            line.length > 80 &&
-            !line.startsWith("[") &&
-            !line.startsWith("http") &&
-            !line.includes("Select ZIP"),
-        ),
-    ).slice(0, 10);
+        .filter((line) => isEditorialLine(line)),
+    ).slice(0, 12);
     pages.unshift({
       title: "Home",
       slug: "home",
@@ -643,6 +672,12 @@ async function main() {
   attachMediaToEntities(products, collections, pages, mediaMap);
 
   const normalizedProducts = products.filter((p) => p.name && p.price !== null);
+  const productSlugSet = new Set(normalizedProducts.map((p) => p.slug));
+  for (const collection of collections) {
+    collection.productSlugs = collection.productSlugs.filter((slug) =>
+      productSlugSet.has(slug),
+    );
+  }
   const normalizedCollections = collections.filter((c) => c.name);
   const pagesDeduped = [...new Map(pages.map((p) => [p.slug, p])).values()];
   const normalizedPages = pagesDeduped.filter((p) => p.title && p.content?.length);

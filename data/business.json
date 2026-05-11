@@ -3,66 +3,31 @@
   "branding": {
     "style": "premium modern floral studio"
   },
-  "address": "509 Forest Ave",
+  "address": "509 Forest Ave, Staten Island, NY 10310",
   "phones": [
-    "(929) 216-7775",
-    "4044870589",
-    "2944181989",
-    "1401612586",
-    "2765391028",
-    "16656217053",
-    "16656387145",
-    "16656374254",
-    "16656374606",
-    "16656377872",
-    "16656387610",
-    "16656378280",
-    "16656387998",
-    "16656385903",
-    "16656375844",
-    "16656385624",
-    "16656374058",
-    "16656376368",
-    "16656386359",
-    "16656380110",
-    "16656373561",
-    "16656380493",
-    "16656381277",
-    "16656382454",
-    "16656381712",
-    "16656382059",
-    "16656382923",
-    "16656376854",
-    "16656378983",
-    "16656377432",
-    "16384653251",
-    "16384668316",
-    "16384655511",
-    "16384657219",
-    "16384659083",
-    "16384665171",
-    "16384660297",
-    "16270772134",
-    "16656384261",
-    "16656384666",
-    "16656389209",
-    "16656379405",
-    "16656383481"
+    "(929) 216-7775"
   ],
   "emails": [
     "cheyflorist509@gmail.com"
   ],
-  "hours": {},
+  "hours": {
+    "Sunday": "9:00 AM To 4:00 PM",
+    "Monday": "10:00 AM To 6:00 PM",
+    "Tuesday": "10:00 AM To 6:00 PM",
+    "Wednesday": "Closed",
+    "Thursday": "10:00 AM To 6:00 PM",
+    "Friday": "10:00 AM To 7:00 PM",
+    "Saturday": "10:00 AM To 7:00 PM"
+  },
   "serviceArea": "All of Staten Island, NY including area hospitals and funeral homes.",
   "homepageCopy": [
-    "- [Occasions](https://www.cheyfloristsi.com/#) - [Main Menu](https://www.cheyfloristsi.com/#)",
-    "- [Make Someone Smile](https://www.cheyfloristsi.com/make-someone-smile/cat1080020)",
-    "- [Flowers](https://www.cheyfloristsi.com/#) - [Main Menu](https://www.cheyfloristsi.com/#)",
-    "- [Flowers in a Gift](https://www.cheyfloristsi.com/flowers-in-a-gift/cat1080003)",
-    "- [![](https://assets.eflorist.com/images/social-media-icons/brand-colors/instagram.png)](https://www.instagram.com/cheyflorist/)",
     "For the best and freshest flowers in Staten Island, Chey Florist has exactly what you’re looking for! Check out our wide selection of flower arrangements to make your next occasion memorable.",
-    "$44.99Buy Now >](https://www.cheyfloristsi.com/bouquet/make-a-wish/p_ef_tev13-6a?skuId=EF_TEV13-6A&zipMin=)",
-    "$54.99Buy Now >](https://www.cheyfloristsi.com/bouquet/how-sweet-it-is/p_ef_t46-1a?skuId=EF_T46-1A&zipMin=)"
+    "## Choose Chey Florist for hand-arranged fresh flower delivery today in Staten Island, NY",
+    "When you shop flowers online with Chey Florist, you will see beautiful bouquet arrangements of flowers hand-crafted with passion, attention to detail, and great care.",
+    "Chey Florist is committed to creating beautiful flower arrangements and floral gifts for any occasion. From Anniversary and Birthday flowers, to Valentine’s and Mother’s Day flowers, Chey Florist has the best selection of floral designs for every unique occasion.",
+    "As a top florist in Staten Island, NY, each of our floral arrangements get the time and personalized attention they deserve. Chey Florist passionately makes all bouquets in house, and personally delivers to your recipient in Staten Island so they are guaranteed to receive fresh and beautiful flowers every time with an added personal touch. Pick out a gorgeous floral arrangement on our website and order flowers online through our convenient and secure checkout page. Chey Florist will expertly arrange your bouquet of beautiful blooms and can even create a custom arrangement or gift basket for your special occasion.",
+    "Chey Florist offers flower delivery in and around Staten Island, as well as nationwide delivery through our reliable florist network! Chey Florist provides same-day flower delivery for your last minute gift needs in Staten Island, NY as well.",
+    "At Chey Florist we want to provide our customers with clear pricing information. By providing your zip/postal code, you will see the pricing including all mandatory fees for your delivery area."
   ],
   "promotions": [
     {
@@ -70,11 +35,11 @@
       "source": "https://www.cheyfloristsi.com/"
     },
     {
-      "text": "!Send The Best Deal of the Day - Biggest Freshest Arrangementhttps://assets.eflorist.com/images/dotd/DOD-Cat-Banner-Mothers-Day.jpghttps://www.cheyfloristsi.com/deal-of-the-day/prod740001?skuId=sku600001&zipMin=",
+      "text": "Send The Best Deal of the Day - Biggest Freshest Arrangement",
       "source": "https://www.cheyfloristsi.com/"
     },
     {
-      "text": "Shop Mother's Day Flowershttps://www.cheyfloristsi.com/mothers-day/cat1110001",
+      "text": "Shop Mother's Day Flowers",
       "source": "https://www.cheyfloristsi.com/"
     },
     {
