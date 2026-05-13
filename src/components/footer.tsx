@@ -86,7 +86,17 @@ export function Footer() {
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 eyebrow text-cream/50">
           <span>© MMXXVI · Chey Florist · Staten Island, NY</span>
           <span className="display italic text-cream/80">Le Jardin Privé</span>
-          <span>Hand-arranged. Never wired.</span>
+          <span>
+            Hand-arranged. Never wired.{' '}
+            <a
+              href="https://voltanyc.org/"
+              className="text-[#c8ff6a] no-underline transition-colors hover:text-[#82c341]"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Made by Volta
+            </a>
+          </span>
         </div>
       </div>
     </footer>
