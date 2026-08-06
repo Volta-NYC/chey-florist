@@ -89,12 +89,12 @@ export function Footer() {
           <span>
             Hand-arranged. Never wired.{' '}
             <a
-              href="https://voltanyc.org/"
-              className="text-[#c8ff6a] no-underline transition-colors hover:text-[#82c341]"
+              href="https://www.novusnyc.org/"
+              className="text-[#F6B78D] no-underline transition-colors hover:text-[#F6B78D]"
               target="_blank"
               rel="noreferrer"
             >
-              Made by Volta
+              Made by Novus
             </a>
           </span>
         </div>
